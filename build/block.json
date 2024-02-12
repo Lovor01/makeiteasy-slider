@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "makeiteasy/slider",
+  "title": "Slider",
+  "description": "Slider based on blocks",
+  "apiVersion": 3,
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./swiper-init.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "file:./swiper-init.css",
+    "file:./style-index.css"
+  ],
+  "category": "media",
+  "attributes": {
+    "sliderSettings": {
+      "type": "string",
+      "default": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 9000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}"
+    },
+    "sliderLayout": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "supports": {
+    "anchor": true,
+    "color": {
+      "background": true
+    }
+  }
+}

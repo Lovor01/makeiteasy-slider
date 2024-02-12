@@ -1,0 +1,13 @@
+{
+	"pagination": {
+		"el": ".swiper-pagination",
+		"type": "bullets"
+	},
+	"autoplay": {
+		"delay": 9000
+	},
+	"navigation": {
+		"nextEl": ".swiper-button-next",
+		"prevEl": ".swiper-button-prev"
+	}
+}

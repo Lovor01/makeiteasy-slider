@@ -1,0 +1,64 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-makeiteasy-slider {
+
+	overflow-x: scroll;
+	display: flex;
+	column-gap: 4px;
+	scroll-snap-type: inline mandatory;
+
+	&.empty-container {
+		display: flex;
+	}
+
+	.empty-placeholder {
+		margin-left: 3ch;
+	}
+
+	// appender
+	> .block-list-appender {
+		margin: 28px 15px 28px 35px !important;
+		position: static;
+		flex: none;
+		width: 100%;
+
+		.block-editor-inserter {
+			height: 100%;
+		}
+
+		.block-editor-button-block-appender {
+			height: 100%;
+		}
+	}
+
+
+	.swiper-slide {
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.swiper-slide,
+	> .block-list-appender {
+		scroll-snap-align: start;
+	}
+
+	&.mie-show-horizontal .block-editor-block-list__layout > .swiper-slide {
+		flex: none;
+	}
+
+	&.mie-show-horizontal50 .block-editor-block-list__layout > .swiper-slide {
+		flex: 0 1 50%;
+	}
+
+	&.mie-show-vertical .block-editor-block-list__layout {
+		flex-flow: column;
+	}
+
+	.wp-block-cover .wp-block-button .wp-block-button__link [data-rich-text-placeholder]::after {
+		color: var(--text-color);
+	}
+}
