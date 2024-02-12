@@ -22,6 +22,9 @@ import { __ } from '@wordpress/i18n';
  */
 import './style.scss';
 
+// add toolbar for hiding slides
+import './editor-extensions/hide-toolbar-button.jsx';
+
 /**
  * Internal dependencies
  */
@@ -51,8 +54,8 @@ const settings = {
 
 	deprecated: [
 		{
-			attributes: settings_v0_9.attributes_v0_9,
-			supports: settings_v0_9.supports_v0_9,
+			attributes: settings_v0_9.attributes,
+			supports: settings_v0_9.supports,
 			save: save_v0_9,
 		}
 	]

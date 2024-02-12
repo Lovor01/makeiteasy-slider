@@ -25,6 +25,8 @@
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
 
+require 'attribute-extensions.php';
+
 function makeiteasy_swiper_slider_block_init() {
 	$dir = __DIR__;
 
