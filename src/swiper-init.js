@@ -14,7 +14,8 @@
 
 // // import styles bundle
 // import 'swiper/css/bundle';
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

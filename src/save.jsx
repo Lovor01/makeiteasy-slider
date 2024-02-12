@@ -37,7 +37,7 @@ export default function Save ( { attributes: { sliderSettings } } ) {
 			</div>
 			{ hasPagination && <div className="swiper-pagination" /> }
 			{ hasNavigation && <div className="swiper-button-prev" /> }
-			<div className="swiper-button-next" />
+			{ hasNavigation && <div className="swiper-button-next" /> }
 			<script />
 		</div>
 	);

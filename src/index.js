@@ -28,6 +28,11 @@ import './style.scss';
 import edit from './edit.jsx';
 import save from './save.jsx';
 
+// deprecations
+import save_v0_9 from './deprecated/save_v0_9.jsx';
+import settings_v0_9 from './deprecated/settings_v0_9.json';
+
+
 // end of namespace
 
 const settings = {
@@ -43,6 +48,14 @@ const settings = {
 	 * @see ./save.js
 	 */
 	save,
+
+	deprecated: [
+		{
+			attributes: settings_v0_9.attributes_v0_9,
+			supports: settings_v0_9.supports_v0_9,
+			save: save_v0_9,
+		}
+	]
 };
 
 /**

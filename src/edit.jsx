@@ -82,7 +82,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			select( 'core/block-editor' ).getBlocksByClientId( clientId );
 		const children = Array.isArray( thisBlocks )
 			? thisBlocks[ 0 ]?.innerBlocks
-			: undefined;
+			: [];
 		children.forEach( ( child ) => {
 			const classes = select( 'core/block-editor' ).getBlockAttributes(
 				child.clientId

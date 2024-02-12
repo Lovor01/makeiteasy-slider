@@ -19,9 +19,9 @@
 		"check-licenses": "wp-scripts check-licenses --prod --gpl2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.0.0"
+		"@wordpress/scripts": "^27.2.0"
 	},
 	"dependencies": {
-		"swiper": "^8.4.5"
+		"swiper": "^11.0.6"
 	}
 }
