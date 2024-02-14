@@ -23,6 +23,8 @@ const withHideSlideBtn = createHigherOrderComponent( ( BlockEdit ) => {
 								icon={ Icon }
 								isPressed={ props.attributes.hideMIESliderSlide }
 								onClick={ () => props.setAttributes( { hideMIESliderSlide: !props.attributes.hideMIESliderSlide } ) }
+								showTooltip={ true }
+								label="Sakrij slide"
 							/>
 						</ToolbarGroup>
 					}
