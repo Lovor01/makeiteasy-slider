@@ -1,30 +1,74 @@
 === Block Slider Swiper ===
-Contributors: lovor
-Donate link:
+Contributors:      lovor
+Donate link:       https://buymeacoffee.com/lovro
 Tags: slider
 Requires at least: 5.5
-Tested up to: 5.9.3
-Stable tag: 1.0
-Requires PHP: 5.6
-License: Mozilla Public License Version 2.0
-License URI: https://www.mozilla.org/en-US/MPL/2.0/
+Tested up to:      5.9.3
+Stable tag:        1.0
+Requires PHP:      5.6
+License:           LGPLv3
+License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
 Swiper based block slider! Insert blocks as slides. Truly open source.
 
 == Description ==
 
-Block based slider, with modern and fast slider workhorse engine – [Swiper slider](https://swiperjs.com/).
+Block based slider, leverages the speed and versatility of the [Swiper slider](https://swiperjs.com/).
 
-- Insert other blocks as slides, which makes this slider solution incredibly versatile.
-- Use configuration for Swiper as JSON - you can do anything Swiper provides.
-- Extend and modify - source code is provided, along with hooks - perfect for developers!
+👆 Try demo - there is a "Live preview" button on the top of this page 👆
+
+= Key Features =
+
+- 🥇 **Insert Any Block as a Slide**: No restrictions! Use the full power of the WordPress block editor.
+- 🥈 **Lightweight & Fast**: No intermediate "slide block" means fewer DOM elements and a cleaner admin interface.
+- 🥉 **Flexible Configuration**: Use Swiper’s full range of features by modifying the JSON configuration.
+- 🌟 **Developer-Friendly**: The source code is fully available, making it easy to customize with hooks.
+
+Modern solution, utilising script modules, a [new feature in Wp 6.5](https://make.wordpress.org/core/2024/03/04/script-modules-in-6-5/),
+to avoid bloating site.
+
+= JSON configuration howto =
+
+Head to Swiper docs, to [Parameters](https://swiperjs.com/swiper-api#parameters) to find parameter you need and full parameters configuration is for many
+parameters available further below on page, in [Modules](https://swiperjs.com/swiper-api#modules)
+to find configuration parameters you need. Once you found them, write them as JSON instead as javascript object, i.e.:
+
+`
+{
+	autoplay: {
+		delay: 6000,
+		disableOnInteraction: true
+	},
+	pagination: {
+		clickable: true
+	}
+}
+`
+
+Your JSON configuration merges with default configuration needed for swiper to run. You can break slider functioning through miconfiguration,
+so this is the first place to look if something does not work.
+
+== Installation ==
+
+= From block editor: =
+
+Search for 'makeiteasy swiper slider' in the block editor when adding a new block via the '+' sign in the top bar.
+
+= Standard Installation: =
+
+1. Install the plugin through the WordPress plugins screen directly or upload the plugin files to the `/wp-content/plugins/makeiteasy-swiper-slider` directory.
+2. Activate the plugin through the 'Plugins' screen in WordPress
 
 == Frequently Asked Questions ==
 
-= Can I use it in other page builders (e.g. *Elementor*) =
+= Why is [feature x] missing? =
 
-Many page builder include support for Block editor (Gutenberg) blocks, hence you can use it in any page builder which
-supports blocks.
+Creating UI for every detail of Swiper slider is exceptionally demanding. That's why configuration in UI is limited, while JSON configuration is secure
+and very powerful.
+
+= Can I use it in other page builders (e.g. Elementor) =
+
+Depends on page builder and some havy third party add-ons which enable that.
 
 == Screenshots ==
 

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /**
  * Swiper initialization script
  *
@@ -11,10 +12,11 @@
 
 // // import Swiper bundle with all modules installed
 // import Swiper from 'swiper/bundle';
-
 // // import styles bundle
 // import 'swiper/css/bundle';
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,21 +28,30 @@ import 'swiper/css/autoplay';
 // 	NodeList.prototype.forEach = Array.prototype.forEach;
 // }
 
-if ( document.readyState === 'loading' )
+if ( document.readyState === 'loading' ) {
 	document.addEventListener( 'DOMContentLoaded', domReady );
-else domReady();
+} else {
+	domReady();
+}
 
 function domReady() {
 	const swiperInstances = document.querySelectorAll( '.swiper' );
-	if ( swiperInstances )
+	if ( swiperInstances ) {
 		swiperInstances.forEach( function ( el ) {
 			const parsedSettings = JSON.parse( el.dataset.settings );
 			const modules = [];
-			if ( parsedSettings.pagination ) modules.push( Pagination );
-			if ( parsedSettings.navigation ) modules.push( Navigation );
-			if ( parsedSettings.autoplay ) modules.push( Autoplay );
+			if ( parsedSettings.pagination ) {
+				modules.push( Pagination );
+			}
+			if ( parsedSettings.navigation ) {
+				modules.push( Navigation );
+			}
+			if ( parsedSettings.autoplay ) {
+				modules.push( Autoplay );
+			}
 
 			const settings = { ...parsedSettings, modules, grabCursor: true };
 			new Swiper( el, settings );
 		} );
+	}
 }

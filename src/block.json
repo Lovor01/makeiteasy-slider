@@ -5,9 +5,12 @@
 	"description": "Slider based on blocks",
 	"apiVersion": 3,
 	"editorScript": "file:./index.js",
-	"viewScript": "file:./swiper-init.js",
+	"viewScriptModule": "file:./swiper-init.js",
 	"editorStyle": "file:./index.css",
-	"style": [ "file:./swiper-init.css", "file:./style-index.css" ],
+	"style": [
+		"file:./swiper-init.css",
+		"file:./style-index.css"
+	],
 	"category": "media",
 	"attributes": {
 		"sliderSettings": {
@@ -21,8 +24,15 @@
 	},
 	"supports": {
 		"anchor": true,
-		"color": {
-			"background": true
+		"ariaLabel": true,
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"shadow": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
 		}
 	}
 }
