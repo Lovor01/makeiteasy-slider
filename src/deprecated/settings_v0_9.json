@@ -1,14 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"name": "makeiteasy/slider-with-thumbnails",
-	"title": "Slider",
-	"description": "Slider with thumbnails",
-	"apiVersion": 2,
-	"editorScript": "file:./index.js",
-	"viewScript": "file:./swiper-init.js",
-	"editorStyle": "file:./index.css",
-	"style": ["file:./swiper-init.css", "file:./style-index.css"],
-	"category": "media",
 	"attributes": {
 		"sliderSettings": {
 			"type": "string",

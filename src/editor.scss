@@ -70,4 +70,16 @@
 	.wp-block-cover .wp-block-button .wp-block-button__link [data-rich-text-placeholder]::after {
 		color: var(--text-color);
 	}
+
+	// dimm slide which is hidden
+	.show-dimmed {
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background: rgba(102, 102, 102, 0.655);
+		}
+	}
 }

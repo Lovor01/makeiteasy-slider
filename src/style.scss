@@ -10,6 +10,10 @@
 	padding: 0;
 }
 
+.wp-block-cover.swiper-slide.swiper-slide {
+	display: flex;
+}
+
 /* pagination bullet */
 .swiper-pagination-bullet {
 	width: 12px;

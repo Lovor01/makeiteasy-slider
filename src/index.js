@@ -22,11 +22,19 @@ import { __ } from '@wordpress/i18n';
  */
 import './style.scss';
 
+// add toolbar for hiding slides
+import './editor-extensions/hide-toolbar-button.jsx';
+
 /**
  * Internal dependencies
  */
 import edit from './edit.jsx';
 import save from './save.jsx';
+
+// deprecations
+import save_v0_9 from './deprecated/save_v0_9.jsx';
+import settings_v0_9 from './deprecated/settings_v0_9.json';
+
 
 // end of namespace
 
@@ -43,6 +51,14 @@ const settings = {
 	 * @see ./save.js
 	 */
 	save,
+
+	deprecated: [
+		{
+			attributes: settings_v0_9.attributes,
+			supports: settings_v0_9.supports,
+			save: save_v0_9,
+		}
+	]
 };
 
 /**
