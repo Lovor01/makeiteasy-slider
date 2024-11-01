@@ -1,33 +1,55 @@
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { BlockControls } from '@wordpress/block-editor'
+import {
+	BlockControls,
+	store as blockEditorStore,
+} from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { ReactComponent as Icon } from '../assets/hide_btn_icon.svg';
 import { useSelect } from '@wordpress/data';
-import { store as blockEditorStore } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 
 const withHideSlideBtn = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
-		const parentIsSlider = useSelect( ( select ) => {
-			const parentID = select( blockEditorStore ).getBlockParents( props.clientId, true )[ 0 ]
-			if ( !parentID )
-				return false
-			const parentBlock = select( blockEditorStore ).getBlock( parentID )
-			return parentBlock.name === 'makeiteasy/slider'
-		}, [ props.clientId ] )
+		const parentIsSlider = useSelect(
+			( select ) => {
+				const parentID = select( blockEditorStore ).getBlockParents(
+					props.clientId,
+					true
+				)[ 0 ];
+				if ( ! parentID ) {
+					return false;
+				}
+				const parentBlock =
+					select( blockEditorStore ).getBlock( parentID );
+				return parentBlock.name === 'makeiteasy/slider';
+			},
+			[ props.clientId ]
+		);
 		return (
 			<>
 				<BlockControls>
-					{ parentIsSlider &&
+					{ parentIsSlider && (
 						<ToolbarGroup>
 							<ToolbarButton
 								icon={ Icon }
-								isPressed={ props.attributes.hideMIESliderSlide }
-								onClick={ () => props.setAttributes( { hideMIESliderSlide: !props.attributes.hideMIESliderSlide } ) }
+								isPressed={
+									props.attributes.hideMIESliderSlide
+								}
+								onClick={ () =>
+									props.setAttributes( {
+										hideMIESliderSlide:
+											! props.attributes
+												.hideMIESliderSlide,
+									} )
+								}
 								showTooltip={ true }
-								label="Sakrij slide"
+								label={ __(
+									'Hide slide',
+									'makeiteasy-slider'
+								) }
 							/>
 						</ToolbarGroup>
-					}
+					) }
 				</BlockControls>
 				<BlockEdit key="edit" { ...props } />
 			</>
@@ -35,13 +57,7 @@ const withHideSlideBtn = createHigherOrderComponent( ( BlockEdit ) => {
 	};
 }, 'withHideSlideBtn' );
 
-wp.hooks.addFilter(
-	'editor.BlockEdit',
-	'makeiteasy/slider',
-	withHideSlideBtn
-);
-
-
+wp.hooks.addFilter( 'editor.BlockEdit', 'makeiteasy/slider', withHideSlideBtn );
 
 /**
  * Add class show-dimmed to block wrapper in editor
@@ -53,9 +69,10 @@ const withShowDimmedClassName = createHigherOrderComponent(
 			return (
 				<BlockListBlock
 					{ ...props }
-					className={ props.attributes?.hideMIESliderSlide ?
-						'show-dimmed' :
-						null
+					className={
+						props.attributes?.hideMIESliderSlide
+							? 'show-dimmed'
+							: null
 					}
 				/>
 			);

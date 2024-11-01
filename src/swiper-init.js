@@ -10,22 +10,19 @@
  * @todo trim down swiper if possible, do not import everything like it is now
  */
 
-// // import Swiper bundle with all modules installed
-// import Swiper from 'swiper/bundle';
-// // import styles bundle
-// import 'swiper/css/bundle';
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+// import styles bundle
+import 'swiper/css/bundle';
 
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import 'swiper/scss/autoplay';
+// modular approach
+// import Swiper from 'swiper';
+// import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-// polyfill
-// if (window.NodeList && !NodeList.prototype.forEach) {
-// 	NodeList.prototype.forEach = Array.prototype.forEach;
-// }
+// import 'swiper/scss';
+// import 'swiper/scss/navigation';
+// import 'swiper/scss/pagination';
+// import 'swiper/scss/autoplay';
 
 if ( document.readyState === 'loading' ) {
 	document.addEventListener( 'DOMContentLoaded', domReady );
@@ -39,15 +36,15 @@ function domReady() {
 		swiperInstances.forEach( function ( el ) {
 			const parsedSettings = JSON.parse( el.dataset.settings );
 			const modules = [];
-			if ( parsedSettings.pagination ) {
-				modules.push( Pagination );
-			}
-			if ( parsedSettings.navigation ) {
-				modules.push( Navigation );
-			}
-			if ( parsedSettings.autoplay ) {
-				modules.push( Autoplay );
-			}
+			// if ( parsedSettings.pagination ) {
+			// 	modules.push( Pagination );
+			// }
+			// if ( parsedSettings.navigation ) {
+			// 	modules.push( Navigation );
+			// }
+			// if ( parsedSettings.autoplay ) {
+			// 	modules.push( Autoplay );
+			// }
 
 			const settings = { ...parsedSettings, modules, grabCursor: true };
 			new Swiper( el, settings );

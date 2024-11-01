@@ -5,25 +5,25 @@
  */
 
 .wp-block-makeiteasy-slider {
-	overflow-x: scroll;
-	display: flex;
-	column-gap: 4px;
-	scroll-snap-type: inline mandatory;
-
-	&.empty-container {
+	.mie-slider-inner {
+		overflow-x: scroll;
 		display: flex;
+		column-gap: 4px;
+		scroll-snap-type: inline mandatory;
 	}
 
-	.empty-placeholder {
-		margin-left: 3ch;
+	// if slider is empty
+	&.empty-container {
+		display: flex;
+		.block-list-appender {
+			width: 60%;
+		}
 	}
 
 	// appender
-	> .block-list-appender {
-		// margin: 28px 15px 28px 35px;
-		position: static;
-		flex: none;
-		width: 100%;
+	.slider-external-appender {
+		position: absolute;
+		inset: 10px -60px 10px auto;
 
 		.block-editor-inserter {
 			height: 100%;
@@ -34,13 +34,21 @@
 		}
 	}
 
+	&.alignfull .slider-external-appender {
+		inset: 100% 0 auto auto;
+		width: 150px;
+
+		.block-editor-inserter {
+			width: 100%;
+		}
+	}
+
 	.swiper-slide {
 		max-width: 100%;
 		box-sizing: border-box;
 	}
 
-	.swiper-slide,
-	> .block-list-appender {
+	.swiper-slide {
 		scroll-snap-align: start;
 	}
 
@@ -50,19 +58,13 @@
 
 	&.mie-show-horizontal50 .swiper-slide,
 	&.mie-show-horizontal50 > .block-list-appender {
-		flex: 0 1 50%;
+		flex: 0 0 50%;
 	}
 
 	&.mie-show-vertical {
 		flex-flow: column;
 
-		> .block-list-appender {
-			width: 90%;
-			margin-inline: auto;
-		}
-
-		.swiper-slide:not(:first-child),
-		> .block-list-appender {
+		.swiper-slide:not(:first-child) {
 			margin-top: 16px;
 		}
 	}
@@ -74,7 +76,7 @@
 	// dimm slide which is hidden
 	.show-dimmed {
 		&::after {
-			content: '';
+			content: "";
 			display: block;
 			position: absolute;
 			inset: 0;
@@ -82,4 +84,21 @@
 			background: rgba(102, 102, 102, 0.655);
 		}
 	}
+}
+
+// show spinners in sidebar control
+.mie-time-between-slides {
+	width: 15ch;
+}
+
+.mie-time-between-slides.mie-time-between-slides .components-input-control__input {
+	appearance: auto;
+
+	&.components-input-control__input {
+		padding-right: 0;
+	}
+}
+
+.mie-advanced-slider-settings-special-help {
+	white-space: pre-line;
 }

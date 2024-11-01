@@ -1,10 +1,11 @@
 // set swiper-slide classes
-import { useEffect } from '@wordpress/element';
+import { useEffect, useId } from '@wordpress/element';
 import { dispatch, select } from '@wordpress/data';
 
+// TODO: consider rewriting isMounted to use Ref
 let isMounted = true;
 
-export default function useInjectClass( clientId ) {
+export function useInjectClass( clientId ) {
 	useEffect( () => {
 		const thisBlocks =
 			select( 'core/block-editor' ).getBlocksByClientId( clientId );
@@ -34,4 +35,15 @@ export default function useInjectClass( clientId ) {
 			isMounted = false;
 		};
 	} );
+}
+
+export function useSliderId( attributes, setAttributes ) {
+	// give unique id and save it to attributes
+	const sliderId = useId().slice( 1, -1 );
+	useEffect( () => {
+		if ( ! attributes.sliderId ) {
+			setAttributes( { sliderId } );
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [ attributes.sliderId ] );
 }

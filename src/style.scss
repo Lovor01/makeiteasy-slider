@@ -1,18 +1,11 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
 .wp-block-columns.swiper-slide {
 	margin: 0;
 	padding: 0;
 }
 
-.wp-block-cover.swiper-slide.swiper-slide {
-	display: flex;
-}
+// .wp-block-cover.swiper-slide.swiper-slide {
+// 	display: flex;
+// }
 
 /* pagination bullet */
 .swiper-pagination-bullet {
@@ -36,31 +29,16 @@
 		text-align: center;
 	}
 
-	// .wp-block-cover .wp-block-button {
-	// 	margin: 20px auto 0 !important;
-	// }
+	// fix images and cover to fit to slider - "cover" mode
+	.swiper-slide {
+		margin: 0;
+		height: 100%;
 
-	/* link button in slider */
-	// .wp-block-cover .wp-block-button .wp-block-button__link {
-	// 	background: #fff;
-	// 	color: var(--text-color);
-	// 	font: 400 20px/1.2  "Fira Sans", sans-serif;
-	// 	padding: 17px 33px;
-	// }
-
-	// .wp-block-cover .wp-block-cover__inner-container > :nth-child(1) {
-	// 	font: 300 30px/1.33  "Fira Sans", sans-serif;
-	// 	margin: 0 auto 2px;
-	// }
-
-	// .wp-block-cover .wp-block-cover__inner-container > :nth-child(3) {
-	// 	font: 300 30px/1.33  "Fira Sans", sans-serif;
-	// 	margin: 0 auto 20px;
-	// }
-
-	// .wp-block-cover .wp-block-cover__inner-container > :nth-child(2),
-	// .wp-block-cover .wp-block-cover__inner-container > h2 {
-	// 	font: 400 60px/1.17  "Fira Sans", sans-serif;
-	// 	margin: 0 auto 2px;
-	// }
+		.wp-block-cover__image-background,
+		&.wp-block-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 }

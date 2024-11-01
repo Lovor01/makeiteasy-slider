@@ -8,10 +8,10 @@ namespace makeiteasy;
 
 function filter_metadata_registration( $metadata ) {
 	if ( $metadata['category'] !== 'theme' ) {
-		$metadata['attributes']['hideMIESliderSlide'] = array(
+		$metadata['attributes']['hideMIESliderSlide'] = [
 			'type'    => 'boolean',
 			'default' => null,
-		);
+		];
 	}
 
 	return $metadata;
@@ -30,4 +30,4 @@ function filter_render_block( $block_content, $block ) {
 
 	return $block_content;
 }
-add_filter('render_block', 'makeiteasy\filter_render_block', 10, 2);
+add_filter( 'render_block', 'makeiteasy\filter_render_block', 10, 2 );

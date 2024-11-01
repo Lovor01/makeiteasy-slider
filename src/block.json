@@ -20,10 +20,32 @@
 		"sliderLayout": {
 			"type": "number",
 			"default": 1
+		},
+		"showNavigation": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"useOnlyAdvancedSliderSettings": {
+			"type": "boolean",
+			"default": false
+		},
+		"timeBetweenSlides": {
+			"type": "string"
+		},
+		"sliderId": {
+			"type": "string"
 		}
 	},
 	"supports": {
 		"anchor": true,
+		"align": [
+			"full",
+			"wide"
+		],
 		"ariaLabel": true,
 		"dimensions": {
 			"aspectRatio": true,

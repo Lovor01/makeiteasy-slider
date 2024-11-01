@@ -4,14 +4,6 @@
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
 import { registerBlockType } from '@wordpress/blocks';
-// import { addFilter } from '@wordpress/hooks'
-
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -32,9 +24,12 @@ import edit from './edit.jsx';
 import save from './save.jsx';
 
 // deprecations
+/* eslint-disable camelcase */
 import save_v0_9 from './deprecated/save_v0_9.jsx';
 import settings_v0_9 from './deprecated/settings_v0_9.json';
+/* eslint-enable camelcase */
 
+import transforms from './transforms.js';
 
 // end of namespace
 
@@ -52,13 +47,17 @@ const settings = {
 	 */
 	save,
 
+	transforms,
+
 	deprecated: [
 		{
+			/* eslint-disable camelcase */
 			attributes: settings_v0_9.attributes,
 			supports: settings_v0_9.supports,
 			save: save_v0_9,
-		}
-	]
+			/* eslint-enable camelcase */
+		},
+	],
 };
 
 /**
