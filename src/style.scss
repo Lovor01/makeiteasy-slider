@@ -43,7 +43,15 @@
 	}
 
 	// if slider has aspect ratio fit to this ratio
-	&.has-aspect-ratio .swiper-slide > * {
-		height: 100%;
+	&.has-aspect-ratio .swiper-slide > {
+		* {
+			height: 100%;
+			margin: 0;
+		}
+		figure > img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
 	}
 }

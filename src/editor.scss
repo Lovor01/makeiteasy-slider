@@ -17,6 +17,23 @@
 		}
 	}
 
+	// fix for aspect ratio not working for tall images
+	&.has-aspect-ratio .mie-slider-inner {
+		height: 100%;
+
+		> figure {
+			&,
+			> .components-resizable-box__container {
+				height: 100% !important;
+				> img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			margin-bottom: 0;
+		}
+	}
+
 	// if slider is empty
 	&.empty-container {
 		display: flex;
