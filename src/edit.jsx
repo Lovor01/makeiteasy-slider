@@ -89,7 +89,10 @@ export default function Edit( {
 					className="slider-external-appender wp-block"
 					tabIndex="-1"
 				>
-					<InnerBlocks.ButtonBlockAppender />
+					{
+						// show external appender outside only in horizontal edit mode
+						! isVertical && <InnerBlocks.ButtonBlockAppender />
+					}
 				</div>
 			</div>
 		</>
