@@ -8,13 +8,34 @@ import {
 	ToggleControl,
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 	__experimentalUnitControl as UnitControl,
+	Button,
 } from '@wordpress/components';
+import { useDispatch } from '@wordpress/data';
+import { store as noticesStore } from '@wordpress/notices';
 
 const SliderSidebar = ( { attributes, setAttributes } ) => {
 	const handleSliderLayoutChange = ( value ) => {
 		const intValue = parseInt( value );
 		if ( intValue && intValue !== attributes.sliderLayout ) {
 			setAttributes( { sliderLayout: intValue } );
+		}
+	};
+	const { createNotice } = useDispatch( noticesStore );
+	const copyJsonToClipboard = async () => {
+		let config;
+		try {
+			await navigator.clipboard.writeText( attributes.sliderSettings );
+			config = { status: 'success', text: 'JSON copied to clipboard' };
+		} catch ( err ) {
+			config = {
+				status: 'error',
+				text: 'Error copying JSON to clipboard',
+			};
+		} finally {
+			createNotice( config.status, config.text, {
+				type: 'snackbar',
+				isDismissible: true,
+			} );
 		}
 	};
 	return (
@@ -138,6 +159,15 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						rows="12"
 						style={ { width: '95%' } }
 					/>
+				</PanelRow>
+				<PanelRow>
+					<Button
+						variant="tertiary"
+						size="small"
+						onClick={ copyJsonToClipboard }
+					>
+						Copy JSON
+					</Button>
 				</PanelRow>
 			</PanelBody>
 		</InspectorControls>

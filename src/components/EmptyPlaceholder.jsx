@@ -35,7 +35,6 @@ export const emptySliderTemplate = applyFilters(
 			'core/cover',
 			{
 				dimRatio: 60,
-				className: 'swiper-slide',
 			},
 			[
 				[ 'core/heading', { placeholder: __( 'Slide Title…' ) } ],

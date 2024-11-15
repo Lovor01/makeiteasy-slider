@@ -11,6 +11,7 @@
 		"file:./swiper-init.css",
 		"file:./style-index.css"
 	],
+	"render": "file:./render.php",
 	"category": "media",
 	"attributes": {
 		"sliderSettings": {

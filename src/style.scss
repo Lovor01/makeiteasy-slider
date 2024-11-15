@@ -41,4 +41,9 @@
 			object-fit: cover;
 		}
 	}
+
+	// if slider has aspect ratio fit to this ratio
+	&.has-aspect-ratio .swiper-slide > * {
+		height: 100%;
+	}
 }

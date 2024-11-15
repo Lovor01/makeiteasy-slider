@@ -1,11 +1,5 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-// import { __ } from '@wordpress/i18n';
-
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+// import { Children } from '@wordpress/element';
 
 const parseTimeInMilliseconds = ( time ) => {
 	if ( time?.match( /[a-zA-Z]/g )?.join( '' ) === 's' ) {
@@ -65,17 +59,36 @@ export default function Save( {
 	const hasPagination = Boolean( parsedSettings.pagination );
 	const hasNavigation = Boolean( parsedSettings.navigation );
 
+	// console.log( innerBlocksProps.children );
+	// const innerBlocksProps = structuredClone( innerBlocksProps );
+	// const innerHTML = innerBlocksProps.children.props.children;
+	// if (
+	// 	innerBlocksProps.children.type.name === 'RawHTML' &&
+	// 	innerHTML.length > 1
+	// ) {
+	// 	innerBlocksProps.children.props.children = `<div class="gutu">${ innerHTML }</div>`;
+	// }
+
+	// const innerBlocksPropsWrapped = () => {
+	// 	const { children, ...rest } = useInnerBlocksProps.save();
+	// 	const wrappedChildren = Children.map( children, ( child, index ) => {
+	// 		return (
+	// 			<div className="swiper-slide" key={ index }>
+	// 				{ child }
+	// 			</div>
+	// 		);
+	// 	} );
+	// 	return { ...rest, children: wrappedChildren };
+	// };
+
 	return (
-		<div { ...useBlockProps.save() }>
-			<div
-				className="swiper"
-				data-settings={ JSON.stringify( parsedSettings ) }
-			>
-				<div
-					className="swiper-wrapper"
-					{ ...useInnerBlocksProps.save() }
-				/>
-			</div>
+		<div
+			{ ...useBlockProps.save( {
+				className: 'swiper',
+				'data-settings': JSON.stringify( parsedSettings ),
+			} ) }
+		>
+			<div className="swiper-wrapper" { ...useInnerBlocksProps.save() } />
 			{ hasPagination && (
 				<div
 					className={ `swiper-pagination swiper-pagination-${ sliderId }` }
@@ -91,7 +104,6 @@ export default function Save( {
 					className={ `swiper-button-next swiper-button-next-${ sliderId }` }
 				/>
 			) }
-			<script />
 		</div>
 	);
 }

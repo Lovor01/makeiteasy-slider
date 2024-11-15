@@ -5,7 +5,7 @@ import {
 } from '@wordpress/block-editor';
 
 import { useSelect } from '@wordpress/data';
-import { useInjectClass, useSliderId } from './helpers/hooks';
+import { useSliderId } from './helpers/hooks';
 import SliderSidebar from './components/BlockSidebar';
 import EmptyPlaceholder, {
 	emptySliderTemplate,
@@ -55,11 +55,11 @@ export default function Edit( {
 	};
 
 	// add classes to inner blocks
-	useInjectClass( clientId );
+	// useInjectClass( clientId );
 
 	// deconstruct useInnerBlocksProps to insert elements on same level
 	const isVertical = sliderLayout === 3;
-	const { children: innerBlocksChildren, ...onlyInnerBlocksProps } =
+	const { children: innerBlocksChildren, ...restBlocksProps } =
 		useInnerBlocksProps( useBlockProps( { className: getClasses() } ), {
 			// do not show appender if horizontal, it will be shown outside of block
 			renderAppender: isVertical
@@ -75,7 +75,7 @@ export default function Edit( {
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 			/>
-			<div { ...onlyInnerBlocksProps }>
+			<div { ...restBlocksProps }>
 				<div className="mie-slider-inner">
 					{ innerBlocksChildren }
 					{ isEmpty && (

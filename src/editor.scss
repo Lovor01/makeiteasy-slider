@@ -10,6 +10,11 @@
 		display: flex;
 		column-gap: 4px;
 		scroll-snap-type: inline mandatory;
+
+		> * {
+			scroll-snap-align: start;
+			flex: 0 0 100%;
+		}
 	}
 
 	// if slider is empty
@@ -43,14 +48,14 @@
 		}
 	}
 
-	.swiper-slide {
-		max-width: 100%;
-		box-sizing: border-box;
-	}
+	// .swiper-slide {
+	// 	max-width: 100%;
+	// 	box-sizing: border-box;
+	// }
 
-	.swiper-slide {
-		scroll-snap-align: start;
-	}
+	// .swiper-slide {
+	// 	scroll-snap-align: start;
+	// }
 
 	&.mie-show-horizontal .swiper-slide {
 		flex: none;

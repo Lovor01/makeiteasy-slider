@@ -2,14 +2,14 @@
 Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags: slider
-Requires at least: 5.5
-Tested up to:      5.9.3
-Stable tag:        1.0
+Requires at least: 6.6
+Tested up to:      6.6
+Stable tag:        1.0.0
 Requires PHP:      5.6
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
-Swiper based block slider! Insert blocks as slides. Truly open source.
+Slider based on very popular library Swiper! Insert blocks as slides. Truly open source.
 
 == Description ==
 
@@ -24,10 +24,10 @@ Block based slider, leverages the speed and versatility of the [Swiper slider](h
 - 🥉 **Flexible Configuration**: Use Swiper’s full range of features by modifying the JSON configuration.
 - 🌟 **Developer-Friendly**: The source code is fully available, making it easy to customize with hooks.
 
-Modern solution, utilising script modules, a [new feature in Wp 6.5](https://make.wordpress.org/core/2024/03/04/script-modules-in-6-5/),
+Modern solution, utilizing script modules, a [new feature in Wp 6.5](https://make.wordpress.org/core/2024/03/04/script-modules-in-6-5/),
 to avoid bloating site.
 
-= JSON configuration howto =
+= JSON configuration how to =
 
 Head to Swiper docs, to [Parameters](https://swiperjs.com/swiper-api#parameters) to find parameter you need and full parameters configuration is for many
 parameters available further below on page, in [Modules](https://swiperjs.com/swiper-api#modules)
@@ -68,7 +68,7 @@ and very powerful.
 
 = Can I use it in other page builders (e.g. Elementor) =
 
-Depends on page builder and some havy third party add-ons which enable that.
+Depends on page builder. Some builders also have third party add-ons which enable that.
 
 == Screenshots ==
 
@@ -77,10 +77,10 @@ Depends on page builder and some havy third party add-ons which enable that.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 Initial version
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.0 =
 Initial version
