@@ -1,5 +1,5 @@
 import { Placeholder } from '@wordpress/components';
-import { __, _x } from '@wordpress/i18n';
+import { _x } from '@wordpress/i18n';
 import { applyFilters } from '@wordpress/hooks';
 
 const EmptyPlaceholder = () => {
@@ -11,9 +11,15 @@ const EmptyPlaceholder = () => {
 				'makeiteasy-popup'
 			) }
 			<br />
+			{ _x(
+				'Add blocks by clicking on "plus".',
+				'empty slider placeholder',
+				'makeiteasy-popup'
+			) }
+			<br />
 			{
 				_x(
-					'Add blocks by clicking on "plus".',
+					'E.g. Cover, Image, Media & Text or any other block.',
 					'empty slider placeholder',
 					'makeiteasy-popup'
 				)
@@ -27,19 +33,22 @@ export default EmptyPlaceholder;
 
 /**
  * Empty template, filterable
+ *
+ * @example
+ * [
+ *		[
+ *			'core/cover',
+ *			{
+ *				dimRatio: 60,
+ *			},
+ *			[
+ *				[ 'core/heading', { placeholder: __( 'Slide Title…' ) } ],
+ *				[ 'core/paragraph', { placeholder: __( 'Slide Text…' ) } ],
+ *			],
+ *		],
+ *	]
  */
 export const emptySliderTemplate = applyFilters(
 	'makeiteasy-slider-newSlideTemplate',
-	[
-		[
-			'core/cover',
-			{
-				dimRatio: 60,
-			},
-			[
-				[ 'core/heading', { placeholder: __( 'Slide Title…' ) } ],
-				[ 'core/paragraph', { placeholder: __( 'Slide Text…' ) } ],
-			],
-		],
-	]
+	undefined
 );

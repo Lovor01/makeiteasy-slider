@@ -9,6 +9,7 @@ import {
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 	__experimentalUnitControl as UnitControl,
 	Button,
+	createSlotFill,
 } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
@@ -82,6 +83,17 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						disabled={ attributes.useOnlyAdvancedSliderSettings }
 					/>
 				</PanelRow>
+				<PanelRow>
+					<ToggleControl
+						label={ __( 'Show Scrollbar', 'makeiteasy-slider' ) }
+						checked={ attributes.showScrollbar }
+						onChange={ ( showScrollbar ) =>
+							setAttributes( { showScrollbar } )
+						}
+						disabled={ attributes.useOnlyAdvancedSliderSettings }
+					/>
+				</PanelRow>
+
 				<PanelRow>
 					<UnitControl
 						className="mie-time-between-slides"

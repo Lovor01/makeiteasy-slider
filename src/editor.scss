@@ -11,21 +11,28 @@
 		column-gap: 4px;
 		scroll-snap-type: inline mandatory;
 
-		> * {
+		>* {
 			scroll-snap-align: start;
 			flex: 0 0 100%;
 		}
+
+	}
+
+	&.empty-container .mie-slider-inner {
+		overflow-x: auto;
+		width: 100%;
 	}
 
 	// fix for aspect ratio not working for tall images
 	&.has-aspect-ratio .mie-slider-inner {
 		height: 100%;
 
-		> figure {
-			> .components-resizable-box__container {
+		>figure {
+			>.components-resizable-box__container {
 				width: 100% !important;
 				height: 100% !important;
 			}
+
 			margin-bottom: 0;
 		}
 	}
@@ -33,6 +40,7 @@
 	// if slider is empty
 	&.empty-container {
 		display: flex;
+
 		.block-list-appender {
 			width: 60%;
 		}
@@ -61,17 +69,19 @@
 		}
 	}
 
-	&.mie-show-horizontal50 .mie-slider-inner > *,
-	&.mie-show-horizontal50 > .block-list-appender {
+	&.mie-show-horizontal50 .mie-slider-inner>*,
+	&.mie-show-horizontal50>.block-list-appender {
 		flex: 0 0 50%;
 	}
 
 	&.mie-show-vertical {
 		.mie-slider-inner {
 			flex-flow: column;
+
 			> :not(:first-child) {
 				margin-top: 16px;
 			}
+
 			// fix block appender
 			.block-list-appender {
 				position: static;

@@ -15,6 +15,7 @@ export default function Save( {
 		sliderId,
 		showNavigation,
 		showPagination,
+		showScrollbar,
 	},
 } ) {
 	let parsedSettings;
@@ -54,10 +55,19 @@ export default function Save( {
 		};
 	}
 
+	if ( showScrollbar ) {
+		parsedSettings.scrollbar = {
+			...parsedSettings.scrollbar,
+			el: `.swiper-scrollbar-${ sliderId }`,
+			draggable: true,
+		};
+	}
+
 	//  using converted parsedSettings back to JSON helps in managing, but also is a weak security layer - possible javascript is removed
 
 	const hasPagination = Boolean( parsedSettings.pagination );
 	const hasNavigation = Boolean( parsedSettings.navigation );
+	const hasScrollBar = Boolean( parsedSettings.scrollbar );
 
 	// console.log( innerBlocksProps.children );
 	// const innerBlocksProps = structuredClone( innerBlocksProps );
@@ -95,13 +105,18 @@ export default function Save( {
 				/>
 			) }
 			{ hasNavigation && (
-				<div
-					className={ `swiper-button-prev swiper-button-prev-${ sliderId }` }
-				/>
+				<>
+					<div
+						className={ `swiper-button-prev swiper-button-prev-${ sliderId }` }
+					/>
+					<div
+						className={ `swiper-button-next swiper-button-next-${ sliderId }` }
+					/>
+				</>
 			) }
-			{ hasNavigation && (
+			{ hasScrollBar && (
 				<div
-					className={ `swiper-button-next swiper-button-next-${ sliderId }` }
+					className={ `swiper-scrollbar swiper-scrollbar-${ sliderId }` }
 				/>
 			) }
 		</div>

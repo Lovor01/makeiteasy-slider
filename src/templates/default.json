@@ -1,0 +1,28 @@
+{
+	"templates": {
+		"Default": {
+			"icon": null,
+			"config": {
+				"pagination": { "el": ".swiper-pagination", "type": "bullets" },
+				"autoplay": { "delay": 9000 },
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"Pagination progress": {
+			"icon": null,
+			"config": {
+				"pagination": {
+					"el": ".swiper-pagination",
+					"type": "progressbar"
+				},
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		}
+	}
+}
