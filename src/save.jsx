@@ -1,4 +1,5 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import { getCSSValueFromRawStyle } from '@wordpress/style-engine';
 // import { Children } from '@wordpress/element';
 
 const parseTimeInMilliseconds = ( time ) => {
@@ -16,6 +17,8 @@ export default function Save( {
 		showNavigation,
 		showPagination,
 		showScrollbar,
+		sliderHeight,
+		style,
 	},
 } ) {
 	let parsedSettings;
@@ -30,13 +33,22 @@ export default function Save( {
 	const timeBetweenSlidesNumber =
 		parseTimeInMilliseconds( timeBetweenSlides );
 
-	// add overriden attributes
+	/**
+	 * add overriden attributes
+	 */
 	if ( timeBetweenSlidesNumber >= 0 ) {
 		parsedSettings.autoplay = {
 			...parsedSettings.autoplay,
 			delay: timeBetweenSlidesNumber,
 		};
 	}
+
+	const blockGap = style?.spacing?.blockGap;
+	if ( blockGap ) {
+		parsedSettings.spaceBetween = getCSSValueFromRawStyle( blockGap );
+		// console.log( getCSSValueFromRawStyle( blockGap ) );
+	}
+
 	// each slider should have its unique class - therefore addition of sliderId
 	if ( showNavigation ) {
 		parsedSettings.navigation = {
@@ -94,8 +106,11 @@ export default function Save( {
 	return (
 		<div
 			{ ...useBlockProps.save( {
-				className: 'swiper',
+				className:
+					'swiper' +
+					( sliderHeight ? ' mie-slider-has-fixed-height' : '' ),
 				'data-settings': JSON.stringify( parsedSettings ),
+				style: { height: sliderHeight },
 			} ) }
 		>
 			<div className="swiper-wrapper" { ...useInnerBlocksProps.save() } />

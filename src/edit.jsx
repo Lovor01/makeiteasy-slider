@@ -10,12 +10,13 @@ import SliderSidebar from './components/BlockSidebar';
 import EmptyPlaceholder, {
 	emptySliderTemplate,
 } from './components/EmptyPlaceholder';
+import cx from './helpers/cx';
 
 import './editor.scss';
 
 export default function Edit( {
 	attributes,
-	attributes: { sliderLayout },
+	attributes: { sliderLayout, sliderHeight },
 	setAttributes,
 	clientId,
 } ) {
@@ -69,6 +70,20 @@ export default function Edit( {
 			template: emptySliderTemplate,
 		} );
 
+	// do not set height if slider is vertical
+	if ( sliderLayout !== 3 ) {
+		restBlocksProps.style = {
+			...restBlocksProps.style,
+			height: sliderHeight,
+		};
+	}
+	if ( sliderHeight ) {
+		restBlocksProps.className = cx(
+			restBlocksProps.className,
+			'mie-slider-has-fixed-height'
+		);
+	}
+
 	return (
 		<>
 			<SliderSidebar
@@ -91,7 +106,12 @@ export default function Edit( {
 				>
 					{
 						// show external appender outside only in horizontal edit mode
-						! isVertical && <InnerBlocks.ButtonBlockAppender />
+						! isVertical &&
+							( attributes.align === 'full' ? (
+								<InnerBlocks.DefaultBlockAppender />
+							) : (
+								<InnerBlocks.ButtonBlockAppender />
+							) )
 					}
 				</div>
 			</div>

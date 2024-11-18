@@ -8,12 +8,14 @@
 	.mie-slider-inner {
 		overflow-x: scroll;
 		display: flex;
-		column-gap: 4px;
+		column-gap: 1rem;
 		scroll-snap-type: inline mandatory;
+		height: 100%;
 
 		>* {
 			scroll-snap-align: start;
-			flex: 0 0 100%;
+			flex: 0 0 auto;
+			margin: 0;
 		}
 
 	}
@@ -23,17 +25,28 @@
 		width: 100%;
 	}
 
+	// fixed slider height
+	&.mie-slider-has-fixed-height {
+		.wp-block-image {
+			height: calc(100% - 12px);
+
+			.components-resizable-box__container {
+				height: 100% !important;
+
+				img {
+					height: 100%
+				}
+			}
+		}
+	}
+
 	// fix for aspect ratio not working for tall images
 	&.has-aspect-ratio .mie-slider-inner {
-		height: 100%;
-
 		>figure {
 			>.components-resizable-box__container {
 				width: 100% !important;
 				height: 100% !important;
 			}
-
-			margin-bottom: 0;
 		}
 	}
 
@@ -60,13 +73,22 @@
 		}
 	}
 
-	&.alignfull .slider-external-appender {
-		inset: 100% 0 auto auto;
-		width: 150px;
+	&.alignfull {
 
-		.block-editor-inserter {
-			width: 100%;
+		.slider-external-appender {
+			inset: auto 0 1rem auto;
 		}
+
+		// for button block appender
+		// .slider-external-appender {
+		// 	inset: 100% 0 auto auto;
+		// 	width: 60px;
+		// 	margin-block-start: 8px;
+
+		// 	.block-editor-inserter {
+		// 		width: 100%;
+		// 	}
+		// }
 	}
 
 	&.mie-show-horizontal50 .mie-slider-inner>*,

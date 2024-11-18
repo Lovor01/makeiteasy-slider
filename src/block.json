@@ -40,6 +40,9 @@
 		},
 		"sliderId": {
 			"type": "string"
+		},
+		"sliderHeight": {
+			"type": "string"
 		}
 	},
 	"supports": {
@@ -53,7 +56,8 @@
 		"shadow": true,
 		"spacing": {
 			"margin": true,
-			"padding": true
+			"padding": true,
+			"blockGap": true
 		}
 	}
 }

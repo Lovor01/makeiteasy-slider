@@ -31,24 +31,35 @@
 
 	// fix images and cover to fit to slider - "cover" mode
 	.swiper-slide {
-		margin: 0;
-		height: 100%;
 
-		.wp-block-cover__image-background,
-		&.wp-block-image img {
-			width: 100%;
+		>* {
+			margin: 0;
 			height: 100%;
-			object-fit: cover;
+
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&.mie-slider-has-fixed-height .swiper-slide {
+		width: auto;
+
+		img {
+			height: 100%;
+			width: auto;
 		}
 	}
 
 	// if slider has aspect ratio fit to this ratio
-	&.has-aspect-ratio .swiper-slide > {
+	&.has-aspect-ratio .swiper-slide> {
 		* {
 			height: 100%;
 			margin: 0;
 		}
-		figure > img {
+
+		figure>img {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;

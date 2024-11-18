@@ -5,8 +5,8 @@
 import {
 	__experimentalStyleProvider as StyleProvider,
 	__experimentalToolsPanelContext as ToolsPanelContext,
+	createSlotFill,
 } from '@wordpress/components';
-import warning from '@wordpress/warning';
 import { useEffect, useContext } from '@wordpress/element';
 
 /**
@@ -16,19 +16,15 @@ import {
 	useBlockEditContext,
 	mayDisplayControlsKey,
 } from '@wordpress/block-editor';
-import groups from './groups';
 
-export default function InspectorControlsFill( {
-	children,
-	group = 'default',
-	resetAllFilter,
-} ) {
+const InspectorControlsSliderAdvanced = createSlotFill(
+	'InspectorControlsSliderAdvanced'
+);
+
+export default function InspectorControlsFill( { children, resetAllFilter } ) {
 	const context = useBlockEditContext();
-	const Fill = groups[ group ]?.Fill;
-	if ( ! Fill ) {
-		warning( `Unknown InspectorControls group "${ group }" provided.` );
-		return null;
-	}
+	const Fill = InspectorControlsSliderAdvanced.Fill;
+
 	if ( ! context[ mayDisplayControlsKey ] ) {
 		return null;
 	}
