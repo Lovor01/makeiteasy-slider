@@ -7,9 +7,7 @@ import {
 import { useSelect } from '@wordpress/data';
 import { useSliderId } from './helpers/hooks';
 import SliderSidebar from './components/BlockSidebar';
-import EmptyPlaceholder, {
-	emptySliderTemplate,
-} from './components/EmptyPlaceholder';
+import EmptyPlaceholder from './components/EmptyPlaceholder';
 import cx from './helpers/cx';
 
 import './editor.scss';
@@ -67,7 +65,10 @@ export default function Edit( {
 				? InnerBlocks.ButtonBlockAppender
 				: false,
 			orientation: isVertical ? 'vertical' : 'horizontal',
-			template: emptySliderTemplate,
+			defaultBlock: { name: 'makeiteasy/slide', attributes: {} },
+			directInsert: true,
+			allowedBlocks: [ 'makeiteasy/slide' ],
+			placeholder: <EmptyPlaceholder />,
 		} );
 
 	// do not set height if slider is vertical
@@ -91,29 +92,22 @@ export default function Edit( {
 				setAttributes={ setAttributes }
 			/>
 			<div { ...restBlocksProps }>
-				<div className="mie-slider-inner">
-					{ innerBlocksChildren }
-					{ isEmpty && (
-						<EmptyPlaceholder
-							innerBlocksChildren={ innerBlocksChildren }
-						/>
-					) }
-				</div>
-				{ /* Add external appender */ }
-				<div
-					className="slider-external-appender wp-block"
-					tabIndex="-1"
-				>
-					{
-						// show external appender outside only in horizontal edit mode
-						! isVertical &&
-							( attributes.align === 'full' ? (
+				<div className="mie-slider-inner">{ innerBlocksChildren }</div>
+				{
+					/* Add external appender only in horizontal edit mode */
+					! isVertical && (
+						<div
+							className="slider-external-appender wp-block"
+							tabIndex="-1"
+						>
+							{ attributes.align === 'full' ? (
 								<InnerBlocks.DefaultBlockAppender />
 							) : (
 								<InnerBlocks.ButtonBlockAppender />
-							) )
-					}
-				</div>
+							) }
+						</div>
+					)
+				}
 			</div>
 		</>
 	);

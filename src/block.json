@@ -7,8 +7,14 @@
 	"editorScript": "file:./index.js",
 	"viewScriptModule": "file:./swiper-init.js",
 	"editorStyle": "file:./index.css",
-	"style": [ "file:./swiper-init.css", "file:./style-index.css" ],
+	"style": [
+		"file:./swiper-init.css",
+		"file:./style-index.css"
+	],
 	"render": "file:./render.php",
+	"allowedBlocks": [
+		"makeiteasy/slide"
+	],
 	"category": "media",
 	"attributes": {
 		"sliderSettings": {
@@ -47,7 +53,10 @@
 	},
 	"supports": {
 		"anchor": true,
-		"align": [ "full", "wide" ],
+		"align": [
+			"full",
+			"wide"
+		],
 		"ariaLabel": true,
 		"dimensions": {
 			"aspectRatio": true,

@@ -1,35 +1,6 @@
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
- */
 import { registerBlockType } from '@wordpress/blocks';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './style.scss';
-
-// add toolbar for hiding slides
-import './editor-extensions/hide-toolbar-button.jsx';
-
-/**
- * Internal dependencies
- */
-import edit from './edit.jsx';
-import save from './save.jsx';
-
-// deprecations
-/* eslint-disable camelcase */
-import save_v0_9 from './deprecated/save_v0_9.jsx';
-import settings_v0_9 from './deprecated/settings_v0_9.json';
-/* eslint-enable camelcase */
-
-import transforms from './transforms.js';
+import { Edit as edit, Save as save } from './edit_save.jsx';
 
 // end of namespace
 
@@ -46,18 +17,6 @@ const settings = {
 	 * @see ./save.js
 	 */
 	save,
-
-	transforms,
-
-	deprecated: [
-		{
-			/* eslint-disable camelcase */
-			attributes: settings_v0_9.attributes,
-			supports: settings_v0_9.supports,
-			save: save_v0_9,
-			/* eslint-enable camelcase */
-		},
-	],
 };
 
 /**
@@ -67,4 +26,4 @@ const settings = {
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType( 'makeiteasy/slider', settings );
+registerBlockType( 'makeiteasy/slide', settings );

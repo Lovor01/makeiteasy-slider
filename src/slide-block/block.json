@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "makeiteasy/slide",
+	"title": "Slide",
+	"parent": [
+		"makeiteasy/slider"
+	],
+	"description": "Slide for makeiteasy slider",
+	"apiVersion": 3,
+	"editorScript": "file:./index.js",
+	"category": "media",
+	"attributes": {
+		"slideWidth": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"shadow": true,
+		"inserter": true
+	}
+}
