@@ -43,21 +43,24 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 		<>
 			<InspectorControls group="settings">
 				<PanelBody
-					title={ __( 'Display', 'makeiteasy-slider' ) }
+					title={ __( 'Editor layout', 'makeiteasy-slider' ) }
 					initialOpen={ true }
 				>
 					<PanelRow>
 						<RadioControl
-							label={ __( 'Slider display' ) }
-							help="Slider appearance for easier management."
+							label={ __(
+								'Editor-only Setting',
+								'makeiteasy-slider'
+							) }
+							help="This control adjusts the block layout in the editor. It does not affect the front-end display."
 							selected={ attributes.sliderLayout.toString() }
 							options={ [
-								{ label: 'full horizontal', value: '1' },
+								{ label: 'one horizontal slide', value: '1' },
+								{ label: 'vertical', value: '3' },
 								{
 									label: 'two slides horizontal',
 									value: '2',
 								},
-								{ label: 'vertical', value: '3' },
 							] }
 							onChange={ handleSliderLayoutChange }
 						/>
@@ -167,6 +170,11 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						/>
 					</PanelRow>
 				</PanelBody>
+			</InspectorControls>
+
+			{ /* Advanced controls (JSON) */ }
+
+			<InspectorControls group="settings">
 				<PanelBody
 					title={ __(
 						'Advanced slider settings',

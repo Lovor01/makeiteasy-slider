@@ -5,13 +5,19 @@
 	"parent": [
 		"makeiteasy/slider"
 	],
+	"icon": "slides",
 	"description": "Slide for makeiteasy slider",
 	"apiVersion": 3,
 	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
 	"category": "media",
 	"attributes": {
 		"slideWidth": {
 			"type": "string"
+		},
+		"hideSlide": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

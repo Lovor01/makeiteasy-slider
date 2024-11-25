@@ -32,14 +32,10 @@ const withHideSlideBtn = createHigherOrderComponent( ( BlockEdit ) => {
 						<ToolbarGroup>
 							<ToolbarButton
 								icon={ Icon }
-								isPressed={
-									props.attributes.hideMIESliderSlide
-								}
+								isPressed={ props.attributes.hideSlide }
 								onClick={ () =>
 									props.setAttributes( {
-										hideMIESliderSlide:
-											! props.attributes
-												.hideMIESliderSlide,
+										hideSlide: ! props.attributes.hideSlide,
 									} )
 								}
 								showTooltip={ true }
@@ -70,9 +66,7 @@ const withShowDimmedClassName = createHigherOrderComponent(
 				<BlockListBlock
 					{ ...props }
 					className={
-						props.attributes?.hideMIESliderSlide
-							? 'show-dimmed'
-							: null
+						props.attributes?.hideSlide ? 'show-dimmed' : null
 					}
 				/>
 			);

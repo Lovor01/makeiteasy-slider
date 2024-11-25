@@ -1,5 +1,10 @@
 <?php
 /**
+ * !!!
+ * Deprecated
+ */
+
+/**
  * Wraps children in swiper slide element - works with output of save
  */
 

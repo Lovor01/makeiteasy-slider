@@ -1,5 +1,8 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import { applyFilters } from '@wordpress/hooks';
+import BlockSidebar from './components/BlockSidebar';
+
+import './editor.scss';
 
 /**
  * Empty template, filterable
@@ -23,24 +26,33 @@ const emptySliderTemplate = applyFilters(
 	undefined
 );
 
-export function Edit() {
+export function Edit( { attributes, setAttributes } ) {
 	return (
-		<div
-			{ ...useInnerBlocksProps(
-				...useBlockProps(
-					{ className: 'swiper-slide' },
-					{ template: emptySliderTemplate }
-				)
-			) }
-		/>
+		<>
+			<BlockSidebar { ...{ attributes, setAttributes } } />
+			<div
+				{ ...useInnerBlocksProps(
+					useBlockProps(
+						{
+							className: 'swiper-slide',
+							style: { width: attributes.slideWidth },
+						},
+						{ template: emptySliderTemplate }
+					)
+				) }
+			/>
+		</>
 	);
 }
 
-export function Save() {
+export function Save( { attributes } ) {
 	return (
 		<div
 			{ ...useInnerBlocksProps.save(
-				...useBlockProps.save( { className: 'swiper-slide' } )
+				useBlockProps.save( {
+					className: 'swiper-slide',
+					style: { width: attributes.slideWidth },
+				} )
 			) }
 		/>
 	);

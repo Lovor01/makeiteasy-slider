@@ -1,5 +1,9 @@
 <?php
 /**
+ * !!!
+ * Deprecated
+ */
+/**
  * Add attributes through filter
  * This could be done in javascript as well with appropriate filter
  */

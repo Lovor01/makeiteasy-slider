@@ -27,9 +27,6 @@
 
 namespace Makeiteasy\Slider;
 
-// include tweaking code to hide slide
-require 'attribute-extensions.php';
-
 /**
  * register modules
  */
