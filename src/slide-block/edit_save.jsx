@@ -1,30 +1,8 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
-import { applyFilters } from '@wordpress/hooks';
 import BlockSidebar from './components/BlockSidebar';
+import { emptySliderTemplate, placeholder } from './components/templates';
 
 import './editor.scss';
-
-/**
- * Empty template, filterable
- *
- * @example
- * [
- *		[
- *			'core/cover',
- *			{
- *				dimRatio: 60,
- *			},
- *			[
- *				[ 'core/heading', { placeholder: __( 'Slide Title…' ) } ],
- *				[ 'core/paragraph', { placeholder: __( 'Slide Text…' ) } ],
- *			],
- *		],
- *	]
- */
-const emptySliderTemplate = applyFilters(
-	'makeiteasy-slider-newSlideTemplate',
-	undefined
-);
 
 export function Edit( { attributes, setAttributes } ) {
 	return (
@@ -32,13 +10,16 @@ export function Edit( { attributes, setAttributes } ) {
 			<BlockSidebar { ...{ attributes, setAttributes } } />
 			<div
 				{ ...useInnerBlocksProps(
-					useBlockProps(
-						{
-							className: 'swiper-slide',
-							style: { width: attributes.slideWidth },
-						},
-						{ template: emptySliderTemplate }
-					)
+					useBlockProps( {
+						className: 'swiper-slide',
+						style: { width: attributes.slideWidth },
+					} ),
+					{
+						template: emptySliderTemplate,
+						placeholder,
+						// renderAppender: false,
+						templateInsertUpdatesSelection: true,
+					}
 				) }
 			/>
 		</>
