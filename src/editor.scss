@@ -12,12 +12,11 @@
 		scroll-snap-type: inline mandatory;
 		height: 100%;
 
-		>* {
+		> * {
 			scroll-snap-align: start;
 			flex: 0 0 auto;
 			margin: 0;
 		}
-
 	}
 
 	&.empty-container .mie-slider-inner {
@@ -34,7 +33,7 @@
 				height: 100% !important;
 
 				img {
-					height: 100%
+					height: 100%;
 				}
 			}
 		}
@@ -42,8 +41,8 @@
 
 	// fix for aspect ratio not working for tall images
 	&.has-aspect-ratio .mie-slider-inner {
-		>figure {
-			>.components-resizable-box__container {
+		> figure {
+			> .components-resizable-box__container {
 				width: 100% !important;
 				height: 100% !important;
 			}
@@ -74,7 +73,6 @@
 	}
 
 	&.alignfull {
-
 		.slider-external-appender {
 			inset: auto 0 1rem auto;
 		}
@@ -91,8 +89,8 @@
 		// }
 	}
 
-	&.mie-show-horizontal50 .mie-slider-inner>*,
-	&.mie-show-horizontal50>.block-list-appender {
+	&.mie-show-horizontal50 .mie-slider-inner > *,
+	&.mie-show-horizontal50 > .block-list-appender {
 		flex: 0 0 50%;
 	}
 
@@ -128,6 +126,9 @@
 	}
 }
 
+/**
+ * Sidebar
+ */
 // show spinners in sidebar control
 .mie-time-between-slides {
 	width: 15ch;
@@ -143,4 +144,12 @@
 
 .mie-advanced-slider-settings-special-help {
 	white-space: pre-line;
+}
+
+.mie-slider-layout-buttons {
+	justify-items: center;
+}
+
+.mie-config-button {
+	color: #ffffff;
 }

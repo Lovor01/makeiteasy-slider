@@ -12,7 +12,8 @@ import {
 } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
-import InspectorControlsSliderAdvanced from './BlockSidebar/CustomSideBarPanelFill';
+import Configurations from './BlockSidebar/Configurations';
+// import InspectorControlsSliderAdvanced from './BlockSidebar/CustomSideBarPanelFill';
 
 const SliderSidebar = ( { attributes, setAttributes } ) => {
 	const handleSliderLayoutChange = ( value ) => {
@@ -42,6 +43,7 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 	return (
 		<>
 			<InspectorControls group="settings">
+				{ /* Editor layout */ }
 				<PanelBody
 					title={ __( 'Editor layout', 'makeiteasy-slider' ) }
 					initialOpen={ true }
@@ -65,6 +67,12 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							onChange={ handleSliderLayoutChange }
 						/>
 					</PanelRow>
+				</PanelBody>
+				<PanelBody title={ __( 'Presets', 'makeiteasy-slider' ) }>
+					<Configurations
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Settings', 'makeiteasy-slider' ) }>
 					<PanelRow>
@@ -261,21 +269,6 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 					/>
 				</PanelRow>
 			</InspectorControls>
-
-			{ /* Advanced controls (JSON) */ }
-
-			<InspectorControlsSliderAdvanced>
-				<PanelBody
-					title={ __(
-						'Advanced slider settings',
-						'makeiteasy-slider'
-					) }
-					initialOpen={ false }
-					scrollAfterOpen
-				>
-					<PanelRow>Some text</PanelRow>
-				</PanelBody>
-			</InspectorControlsSliderAdvanced>
 		</>
 	);
 };

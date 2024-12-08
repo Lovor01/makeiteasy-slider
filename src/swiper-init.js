@@ -30,6 +30,25 @@ if ( document.readyState === 'loading' ) {
 	domReady();
 }
 
+// TODO: add possibility to parse thumbnail slider settings in slider (e.g. thumbs: property on the same level as config)
+
+function initializeThumbnails( el ) {
+	const swiper = document.createElement( 'div' );
+	swiper.classList.add( 'swiper' );
+	const swiperWrapper = document.createElement( 'div' );
+	swiperWrapper.classList.add( 'swiper-wrapper' );
+	swiper.appendChild( swiperWrapper );
+	el.insertAdjacentElement( 'afterend', swiper );
+
+	return new Swiper( swiper, {
+		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+	} );
+}
+
 function domReady() {
 	const swiperInstances = document.querySelectorAll( '.swiper' );
 	if ( swiperInstances ) {
@@ -46,7 +65,12 @@ function domReady() {
 			// 	modules.push( Autoplay );
 			// }
 
-			const settings = { ...parsedSettings, modules, grabCursor: true };
+			// replace @self value in parsedSettings with the current instance
+			if ( parsedSettings?.thumbs?.swiper ) {
+				parsedSettings.thumbs.swiper = initializeThumbnails( el );
+			}
+
+			const settings = { ...parsedSettings, modules };
 			new Swiper( el, settings );
 		} );
 	}

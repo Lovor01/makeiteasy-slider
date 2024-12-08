@@ -1,4 +1,5 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+// eslint-disable-next-line import/no-unresolved
 import { getCSSValueFromRawStyle } from '@wordpress/style-engine';
 // import { Children } from '@wordpress/element';
 
@@ -19,6 +20,7 @@ export default function Save( {
 		showScrollbar,
 		sliderHeight,
 		style,
+		useOnlyAdvancedSliderSettings,
 	},
 } ) {
 	let parsedSettings;
@@ -50,31 +52,32 @@ export default function Save( {
 	}
 
 	// each slider should have its unique class - therefore addition of sliderId
-	if ( showNavigation ) {
-		parsedSettings.navigation = {
-			...parsedSettings.navigation,
-			prevEl: `.swiper-button-prev-${ sliderId }`,
-			nextEl: `.swiper-button-next-${ sliderId }`,
-		};
-	}
+	if ( ! useOnlyAdvancedSliderSettings ) {
+		if ( showNavigation ) {
+			parsedSettings.navigation = {
+				...parsedSettings.navigation,
+				prevEl: `.swiper-button-prev-${ sliderId }`,
+				nextEl: `.swiper-button-next-${ sliderId }`,
+			};
+		}
 
-	if ( showPagination ) {
-		parsedSettings.pagination = {
-			...parsedSettings.pagination,
-			el: `.swiper-pagination-${ sliderId }`,
-			type: 'bullets',
-			// clickable: true,
-		};
-	}
+		if ( showPagination ) {
+			parsedSettings.pagination = {
+				...parsedSettings.pagination,
+				el: `.swiper-pagination-${ sliderId }`,
+				type: parsedSettings?.pagination?.type ?? 'bullets',
+				// clickable: true,
+			};
+		}
 
-	if ( showScrollbar ) {
-		parsedSettings.scrollbar = {
-			...parsedSettings.scrollbar,
-			el: `.swiper-scrollbar-${ sliderId }`,
-			draggable: true,
-		};
+		if ( showScrollbar ) {
+			parsedSettings.scrollbar = {
+				...parsedSettings.scrollbar,
+				el: `.swiper-scrollbar-${ sliderId }`,
+				draggable: true,
+			};
+		}
 	}
-
 	//  using converted parsedSettings back to JSON helps in managing, but also is a weak security layer - possible javascript is removed
 
 	const hasPagination = Boolean( parsedSettings.pagination );

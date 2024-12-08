@@ -3,8 +3,13 @@
 		"Default": {
 			"icon": null,
 			"config": {
-				"pagination": { "el": ".swiper-pagination", "type": "bullets" },
-				"autoplay": { "delay": 9000 },
+				"pagination": {
+					"el": ".swiper-pagination",
+					"type": "bullets"
+				},
+				"autoplay": {
+					"delay": 9000
+				},
 				"navigation": {
 					"nextEl": ".swiper-button-next",
 					"prevEl": ".swiper-button-prev"
@@ -21,6 +26,113 @@
 				"navigation": {
 					"nextEl": ".swiper-button-next",
 					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"Pagination fraction, delay": {
+			"icon": null,
+			"config": {
+				"pagination": {
+					"el": ".swiper-pagination",
+					"type": "fraction"
+				},
+				"autoplay": {
+					"delay": 9000
+				},
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"3 Slides per view": {
+			"icon": null,
+			"config": {
+				"slidesPerView": 3,
+				"spaceBetween": 30,
+				"pagination": {
+					"el": ".swiper-pagination",
+					"clickable": true
+				},
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"CSS performant mode": {
+			"icon": null,
+			"config": {
+				"cssMode": true,
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				},
+				"pagination": {
+					"el": ".swiper-pagination"
+				},
+				"mousewheel": true,
+				"keyboard": true
+			}
+		},
+		"Free mode": {
+			"icon": null,
+			"config": {
+				"slidesPerView": 3,
+				"spaceBetween": 30,
+				"freeMode": true,
+				"pagination": {
+					"el": ".swiper-pagination",
+					"clickable": true
+				},
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"Infinite loop": {
+			"icon": null,
+			"config": {
+				"slidesPerView": 1,
+				"spaceBetween": 30,
+				"loop": true,
+				"pagination": {
+					"el": ".swiper-pagination",
+					"clickable": true
+				},
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				}
+			}
+		},
+		"Fade effect": {
+			"icon": null,
+			"config": {
+				"spaceBetween": 30,
+				"effect": "fade",
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				},
+				"pagination": {
+					"el": ".swiper-pagination",
+					"clickable": true
+				}
+			}
+		},
+		"Thumbnails loop": {
+			"icon": null,
+			"config": {
+				"loop": true,
+				"spaceBetween": 10,
+				"navigation": {
+					"nextEl": ".swiper-button-next",
+					"prevEl": ".swiper-button-prev"
+				},
+				"thumbs": {
+					"swiper": "@self"
 				}
 			}
 		}

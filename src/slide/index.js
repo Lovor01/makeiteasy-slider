@@ -2,6 +2,8 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import { Edit as edit, Save as save } from './edit_save.jsx';
 
+import './style.scss';
+
 // end of namespace
 
 const settings = {

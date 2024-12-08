@@ -4,6 +4,11 @@ import { emptySliderTemplate, placeholder } from './components/templates';
 
 import './editor.scss';
 
+const hasMinHeightClass = ( attributes ) =>
+	Boolean( attributes?.style?.dimensions?.minHeight )
+		? ' mie-slide-has-min-height'
+		: '';
+
 export function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
@@ -11,7 +16,9 @@ export function Edit( { attributes, setAttributes } ) {
 			<div
 				{ ...useInnerBlocksProps(
 					useBlockProps( {
-						className: 'swiper-slide',
+						className: `swiper-slide${ hasMinHeightClass(
+							attributes
+						) }`,
 						style: { width: attributes.slideWidth },
 					} ),
 					{
@@ -31,7 +38,9 @@ export function Save( { attributes } ) {
 		<div
 			{ ...useInnerBlocksProps.save(
 				useBlockProps.save( {
-					className: 'swiper-slide',
+					className: `swiper-slide${ hasMinHeightClass(
+						attributes
+					) }`,
 					style: { width: attributes.slideWidth },
 				} )
 			) }
