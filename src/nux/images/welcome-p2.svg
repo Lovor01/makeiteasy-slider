@@ -1,0 +1,20 @@
+<svg width="312" height="240" fill="none" version="1.1" viewBox="0 0 312 240" xmlns="http://www.w3.org/2000/svg">
+ <path d="m0 0h312v240h-312z" fill="#00a0d2"/>
+ <g transform="translate(-13.777)">
+  <rect x="58.216" y="71.921" width="195.57" height="96.158" style="fill:#fff;stroke-width:1.952;stroke:#000"/>
+  <rect x="60.905" y="74.53" width="53.598" height="90.738" style="fill:#fff;stroke-width:1.952;stroke:#000"/>
+  <rect x="129.31" y="74.681" width="53.598" height="90.738" style="fill:#fff;stroke-width:1.952;stroke:#000"/>
+  <rect x="197.71" y="74.681" width="53.598" height="90.738" style="fill:#fff;stroke-width:1.952;stroke:#000"/>
+  <path d="m82.676 108.66-18.597-3.711 12.512-14.25z" style="fill:#747474"/>
+  <circle cx="86.42" cy="140.57" r="11.839" style="fill:#747474"/>
+  <rect x="89.832" y="100.33" width="16.856" height="16.656" style="fill:#747474"/>
+  <rect x="134.25" y="106.33" width="15.05" height="2.9097" style="fill:#747474"/>
+  <rect x="134.25" y="114.48" width="42.943" height="2.9097" style="fill:#747474"/>
+  <rect x="134.25" y="122.63" width="37.124" height="2.9097" style="fill:#747474"/>
+  <rect x="134.25" y="130.78" width="42.943" height="2.9097" style="fill:#747474"/>
+  <text x="212.58669" y="132.26404" style="fill:#747474;font-family:Lora;font-size:37.333px;stroke-width:.8" xml:space="preserve"><tspan x="212.58669" y="132.26404">T</tspan></text>
+  <rect x="260.07" y="77.458" width="21.271" height="86.288" style="fill:#fff;stroke-width:1.952;stroke:#000"/>
+  <path d="m270.7 125.73v-10.256" style="fill:#fff;stroke-width:1.5457;stroke:#000"/>
+  <path d="m265.57 120.6h10.256" style="fill:#fff;stroke-width:1.5457;stroke:#000"/>
+ </g>
+</svg>

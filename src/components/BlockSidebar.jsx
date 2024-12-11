@@ -13,6 +13,8 @@ import {
 import { useDispatch } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
 import Configurations from './BlockSidebar/Configurations';
+import { showGuideNow } from '../nux/tips';
+
 // import InspectorControlsSliderAdvanced from './BlockSidebar/CustomSideBarPanelFill';
 
 const SliderSidebar = ( { attributes, setAttributes } ) => {
@@ -223,6 +225,16 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						</Button>
 					</PanelRow>
 				</PanelBody>
+				<div className="mie-welcome-guide-button-container">
+					<Button
+						variant="primary"
+						className="mie-welcome-guide-button"
+						size="small"
+						onClick={ showGuideNow }
+					>
+						Welcome Guide
+					</Button>
+				</div>
 			</InspectorControls>
 
 			{ /* dimensions */ }

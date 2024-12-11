@@ -29,10 +29,9 @@
 		text-align: center;
 	}
 
-	// fix images and cover to fit to slider - "cover" mode
 	.swiper-slide {
-
-		>* {
+		// fix images and cover to fit to slider - "cover" mode
+		> * {
 			margin: 0;
 			height: 100%;
 
@@ -40,6 +39,12 @@
 				width: 100%;
 				object-fit: cover;
 			}
+		}
+
+		// set images in center of slide
+		.wp-block-image > img {
+			display: block;
+			margin-inline: auto;
 		}
 	}
 
@@ -53,13 +58,13 @@
 	}
 
 	// if slider has aspect ratio fit to this ratio
-	&.has-aspect-ratio .swiper-slide> {
+	&.has-aspect-ratio .swiper-slide > {
 		* {
 			height: 100%;
 			margin: 0;
 		}
 
-		figure>img {
+		figure > img {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;

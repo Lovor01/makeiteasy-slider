@@ -21,7 +21,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 			key: process.env.key_location,
 		},
 	};
-	// defaultConfig.experiments = { backCompat: false };
+	defaultConfig.experiments = { backCompat: false };
 
 	defaultConfig.devServer.allowedHosts = [
 		process.env.host,

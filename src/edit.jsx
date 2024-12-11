@@ -9,8 +9,12 @@ import { useSliderId } from './helpers/hooks';
 import SliderSidebar from './components/BlockSidebar';
 import EmptyPlaceholder from './components/EmptyPlaceholder';
 import cx from './helpers/cx';
+import WelcomeGuide, { init } from './nux/tips';
 
 import './editor.scss';
+
+// initialize default for welcome preference if it does not exist
+init();
 
 export default function Edit( {
 	attributes,
@@ -91,6 +95,7 @@ export default function Edit( {
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 			/>
+			<WelcomeGuide />
 			<div { ...restBlocksProps }>
 				<div className="mie-slider-inner">{ innerBlocksChildren }</div>
 				{
