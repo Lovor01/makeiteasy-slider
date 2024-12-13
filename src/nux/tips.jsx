@@ -63,7 +63,7 @@ export default function () {
 						// 		) }
 						// 	/>
 						// </Suspense>
-						<ImgPage1 />
+						<ImgPage1 className="edit-post-welcome-guide__image" />
 					),
 					content: (
 						<>
@@ -83,7 +83,9 @@ export default function () {
 					),
 				},
 				{
-					image: <ImgPage2 />,
+					image: (
+						<ImgPage2 className="edit-post-welcome-guide__image" />
+					),
 					content: (
 						<>
 							<h1 className="edit-post-welcome-guide__heading">
@@ -107,7 +109,9 @@ export default function () {
 					),
 				},
 				{
-					image: <ImgPage3 />,
+					image: (
+						<ImgPage3 className="edit-post-welcome-guide__image" />
+					),
 					content: (
 						<>
 							<h1 className="edit-post-welcome-guide__heading">

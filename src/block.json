@@ -5,15 +5,10 @@
 	"description": "Slider based on blocks",
 	"apiVersion": 3,
 	"editorScript": "file:./index.js",
-	"viewScriptModule": "file:./swiper-init.js",
+	"viewScript": "file:./swiper-init.js",
 	"editorStyle": "file:./index.css",
-	"style": [
-		"file:./swiper-init.css",
-		"file:./style-index.css"
-	],
-	"allowedBlocks": [
-		"makeiteasy/slide"
-	],
+	"style": [ "file:./swiper-init.css", "file:./style-index.css" ],
+	"allowedBlocks": [ "makeiteasy/slide" ],
 	"category": "media",
 	"attributes": {
 		"sliderSettings": {
@@ -52,10 +47,7 @@
 	},
 	"supports": {
 		"anchor": true,
-		"align": [
-			"full",
-			"wide"
-		],
+		"align": [ "full", "wide" ],
 		"ariaLabel": true,
 		"dimensions": {
 			"aspectRatio": true,

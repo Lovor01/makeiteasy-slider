@@ -1,8 +1,28 @@
 /* eslint-disable @wordpress/no-unsafe-wp-apis */
 import configs from '../../templates/default.json';
 import { __experimentalGrid as Grid, Button } from '@wordpress/components';
-import { ReactComponent as DefaultIcon } from './default-slide.svg';
 import { useMemo } from '@wordpress/element';
+import { ReactComponent as DefaultIcon } from '../../templates/images/default.svg';
+import { ReactComponent as ProgressBarIcon } from '../../templates/images/progressbar.svg';
+import { ReactComponent as FractionIcon } from '../../templates/images/fraction.svg';
+import { ReactComponent as ThreeSlides } from '../../templates/images/three-slides.svg';
+import { ReactComponent as PerformanceIcon } from '../../templates/images/performance.svg';
+import { ReactComponent as FreeModeIcon } from '../../templates/images/free-mode.svg';
+import { ReactComponent as InfiniteLoopIcon } from '../../templates/images/infinite-loop.svg';
+import { ReactComponent as FadeIcon } from '../../templates/images/fade.svg';
+import { ReactComponent as CoverflowIcon } from '../../templates/images/coverflow.svg';
+
+const allIcons = [
+	DefaultIcon,
+	ProgressBarIcon,
+	FractionIcon,
+	ThreeSlides,
+	PerformanceIcon,
+	FreeModeIcon,
+	InfiniteLoopIcon,
+	FadeIcon,
+	CoverflowIcon,
+];
 
 export default function Configurations( {
 	attributes: { sliderSettings },
@@ -33,13 +53,13 @@ export default function Configurations( {
 				label={ config }
 				showTooltip
 				size="default"
-				iconSize="64"
+				iconSize="50"
 				onClick={ () => {
 					setAttributes( {
 						sliderSettings: templates[ config ].config,
 					} );
 				} }
-				icon={ templates[ config ].icon ?? DefaultIcon }
+				icon={ templates[ config ].icon ?? allIcons[ counter ] }
 			/>
 		);
 		counter++;
@@ -50,6 +70,7 @@ export default function Configurations( {
 			columns={ 3 }
 			alignment="center"
 			className="mie-slider-layout-buttons"
+			gap={ 2 }
 		>
 			{ configElements }
 		</Grid>

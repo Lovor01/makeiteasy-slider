@@ -6,20 +6,20 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build --experimental-modules",
+		"build": "wp-scripts build",
 		"format": "wp-scripts format",
 		"format:js": "wp-scripts format-js",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start --experimental-modules",
-		"start:hot": "wp-scripts start --hot --experimental-modules",
+		"start": "wp-scripts start",
+		"start:hot": "wp-scripts start --hot",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses --prod --gpl2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.6.0",
+		"@wordpress/scripts": "^30.7.0",
 		"dotenv": "^16.4.5"
 	},
 	"dependencies": {

@@ -9,11 +9,15 @@ import {
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 	__experimentalUnitControl as UnitControl,
 	Button,
+	ExternalLink,
 } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
 import Configurations from './BlockSidebar/Configurations';
-import { showGuideNow } from '../nux/tips';
+import WelcomeGuide, { init, showGuideNow } from '../nux/tips';
+
+// initialize default for welcome preference if it does not exist
+init();
 
 // import InspectorControlsSliderAdvanced from './BlockSidebar/CustomSideBarPanelFill';
 
@@ -45,6 +49,8 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 	return (
 		<>
 			<InspectorControls group="settings">
+				<WelcomeGuide />
+
 				{ /* Editor layout */ }
 				<PanelBody
 					title={ __( 'Editor layout', 'makeiteasy-slider' ) }
@@ -223,6 +229,22 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						>
 							Copy JSON
 						</Button>
+					</PanelRow>
+					<PanelRow className="mie-helpful-links">
+						<p>
+							Check the{ ' ' }
+							<span>
+								<ExternalLink href="https://swiperjs.com/swiper-api#parameters">
+									Swiper manual
+								</ExternalLink>
+							</span>{ ' ' }
+							for JSON settings.
+						</p>
+						<p>
+							<ExternalLink href="https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/">
+								JSON how to
+							</ExternalLink>
+						</p>
 					</PanelRow>
 				</PanelBody>
 				<div className="mie-welcome-guide-button-container">

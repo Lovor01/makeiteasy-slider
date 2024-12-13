@@ -1,8 +1,11 @@
 // change webpack default config (for modules)
-const [
-	defaultConfig,
-	moduleConfig,
-] = require( '@wordpress/scripts/config/webpack.config.js' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
+
+//  this is for script modules
+// [
+// 	defaultConfig,
+// 	moduleConfig,
+// ]
 // import defaultConfig from '@wordpress/scripts/config/webpack.config.js';
 // eslint-disable-next-line import/no-extraneous-dependencies
 require( 'dotenv' ).config();
@@ -32,4 +35,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 // defaultConfig.optimization.runtimeChunk = 'single';
 
-module.exports = [ defaultConfig, moduleConfig ];
+// modules
+// module.exports = [ defaultConfig, moduleConfig ];
+
+module.exports = defaultConfig;

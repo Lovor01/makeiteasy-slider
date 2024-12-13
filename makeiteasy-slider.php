@@ -30,8 +30,13 @@ namespace Makeiteasy\Slider;
 /**
  * register modules
  */
-// wp_register_script_module( 'makeiteasy/swiper/modules', plugin_dir_url( __FILE__ ) . 'node_modules/swiper/modules/index.min.mjs' );
-// wp_enqueue_script_module( 'makeiteasy/swiper', plugin_dir_url( __FILE__ ) . 'node_modules/swiper/swiper.min.mjs', [ 'makeiteasy/swiper/modules' ] );
+// register swiper module
+// wp_enqueue_script_module(
+// 	'makeiteasy/swiper',
+// 	plugins_url( 'build/swiper/swiper-bundle.min.js', __FILE__ ),
+// 	[],
+// 	'1.0.0'
+// );
 
 function makeiteasy_swiper_slider_block_init() {
 	\register_block_type( __DIR__ . '/build' );

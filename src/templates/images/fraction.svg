@@ -1,0 +1,12 @@
+<svg width="60" height="40" version="1.1" viewBox="0 0 19.844 13.229" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="ArrowWideRounded" style="overflow:visible" markerHeight="0.8" markerWidth="0.8" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="rotate(180 .125 0)" d="m3-3-3 3 3 3" style="fill:none;stroke-linecap:round;stroke:context-stroke"/>
+  </marker>
+ </defs>
+ <rect x=".51203" y=".51203" width="18.82" height="12.205" style="fill:currentColor;stroke-width:1.0239;stroke:#424242"/>
+ <rect x="2.1369" y="2.0632" width="15.57" height="9.1029" style="fill:#fff;stroke-dasharray:1.32291668;stroke-width:.66146;stroke:#1e1e1e"/>
+ <path d="m3.4781 6.6146h-0.1552" style="fill:#808080;marker-end:url(#ArrowWideRounded);stroke-width:.66146;stroke:#1e1e1e"/>
+ <path d="m16.395 6.6146h0.1552" style="fill:#808080;marker-end:url(#ArrowWideRounded);stroke-width:.66146;stroke:#1e1e1e"/>
+ <text x="6.3927941" y="9.8277855" style="fill:#000000;font-family:Tahoma;font-size:3.175px;font-weight:bold;letter-spacing:.52917px;stroke-width:.66147" xml:space="preserve"><tspan x="6.3927941" y="9.8277855" style="fill:#000000;font-family:Tahoma;font-size:3.175px;font-weight:bold;letter-spacing:.52917px;stroke-width:.66147">1/3</tspan></text>
+</svg>
