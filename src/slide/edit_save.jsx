@@ -1,24 +1,26 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 import BlockSidebar from './components/BlockSidebar';
+import BlockToolbar from './components/BlockToolbar';
 import { emptySliderTemplate, placeholder } from './components/templates';
+import cx from '../helpers/cx';
 
 import './editor.scss';
-
-const hasMinHeightClass = ( attributes ) =>
-	Boolean( attributes?.style?.dimensions?.minHeight )
-		? ' mie-slide-has-min-height'
-		: '';
 
 export function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
+			<BlockToolbar { ...{ attributes, setAttributes } } />
 			<BlockSidebar { ...{ attributes, setAttributes } } />
 			<div
 				{ ...useInnerBlocksProps(
 					useBlockProps( {
-						className: `swiper-slide${ hasMinHeightClass(
-							attributes
-						) }`,
+						className: cx(
+							'swiper-slide',
+							Boolean(
+								attributes?.style?.dimensions?.minHeight
+							) && 'mie-slide-has-min-height',
+							attributes.hideSlide && 'mie-slide-hidden'
+						),
 						style: { width: attributes.slideWidth },
 					} ),
 					{
@@ -38,9 +40,11 @@ export function Save( { attributes } ) {
 		<div
 			{ ...useInnerBlocksProps.save(
 				useBlockProps.save( {
-					className: `swiper-slide${ hasMinHeightClass(
-						attributes
-					) }`,
+					className: cx(
+						'swiper-slide',
+						Boolean( attributes?.style?.dimensions?.minHeight ) &&
+							'mie-slide-has-min-height'
+					),
 					style: { width: attributes.slideWidth },
 				} )
 			) }

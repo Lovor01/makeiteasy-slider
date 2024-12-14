@@ -32,10 +32,10 @@ namespace Makeiteasy\Slider;
  */
 // register swiper module
 // wp_enqueue_script_module(
-// 	'makeiteasy/swiper',
-// 	plugins_url( 'build/swiper/swiper-bundle.min.js', __FILE__ ),
-// 	[],
-// 	'1.0.0'
+//  'makeiteasy/swiper',
+//  plugins_url( 'build/swiper/swiper-bundle.min.js', __FILE__ ),
+//  [],
+//  '1.0.0'
 // );
 
 function makeiteasy_swiper_slider_block_init() {

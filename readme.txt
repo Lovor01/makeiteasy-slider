@@ -20,12 +20,9 @@ Block based slider, leverages the speed and versatility of the [Swiper slider](h
 = Key Features =
 
 - 🥇 **Insert Any Block as a Slide**: No restrictions! Use the full power of the WordPress block editor.
-- 🥈 **Lightweight & Fast**: No intermediate "slide block" means fewer DOM elements and a cleaner admin interface.
-- 🥉 **Flexible Configuration**: Use Swiper’s full range of features by modifying the JSON configuration.
+- 🥈 **Flexible Configuration**: Use Swiper’s full range of features by entering the JSON configuration.
+- 🥉 **Lightweight & Fast**: Uses only [Swiper](https://swiperjs.com/) library as dependency.
 - 🌟 **Developer-Friendly**: The source code is fully available, making it easy to customize with hooks.
-
-Modern solution, utilizing script modules, a [new feature in Wp 6.5](https://make.wordpress.org/core/2024/03/04/script-modules-in-6-5/),
-to avoid bloating site.
 
 = JSON configuration how to =
 

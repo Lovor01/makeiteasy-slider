@@ -8,4 +8,16 @@
 	.mie-slide-placeholder {
 		height: 100%;
 	}
+
+	// dimm slide which is hidden
+	&.mie-slide-hidden {
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background: rgba(102, 102, 102, 0.863);
+		}
+	}
 }

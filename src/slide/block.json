@@ -2,15 +2,14 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"name": "makeiteasy/slide",
 	"title": "Slide",
-	"parent": [
-		"makeiteasy/slider"
-	],
+	"parent": [ "makeiteasy/slider" ],
 	"icon": "slides",
 	"description": "Slide for makeiteasy slider",
 	"apiVersion": 3,
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
+	"render": "file:./render.php",
 	"category": "media",
 	"attributes": {
 		"slideWidth": {
@@ -25,6 +24,14 @@
 		"dimensions": {
 			"aspectRatio": true,
 			"minHeight": true
+		},
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"color": {
+			"background": true,
+			"text": false
 		},
 		"shadow": true,
 		"inserter": true

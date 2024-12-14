@@ -115,18 +115,6 @@
 	.wp-block-cover .wp-block-button .wp-block-button__link [data-rich-text-placeholder]::after {
 		color: var(--text-color);
 	}
-
-	// dimm slide which is hidden
-	.show-dimmed {
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			inset: 0;
-			z-index: 1;
-			background: rgba(102, 102, 102, 0.655);
-		}
-	}
 }
 
 /**
@@ -145,8 +133,34 @@
 	}
 }
 
+// JSON error in textarea
+
+.mie-JSON-error .components-textarea-control__input {
+	border: 1px solid #ec2d2d !important;
+	transition: 0.5s border-color;
+}
+
+.mie-json-settings {
+	position: relative;
+
+	.mie-JSON-error-message {
+		position: absolute;
+		padding: 0.3em 2em;
+		bottom: 2.7rem;
+		background: #ec2d2d;
+		color: #fff;
+		transition: all 0.3s;
+	}
+}
+
 .mie-advanced-slider-settings-special-help {
 	white-space: pre-line;
+	width: 100%;
+	position: relative;
+
+	&.mie-advanced-slider-settings-special-help.mie-advanced-slider-settings-special-help {
+		margin-bottom: 0;
+	}
 }
 
 .mie-slider-layout-buttons {

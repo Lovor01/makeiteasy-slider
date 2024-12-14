@@ -15,6 +15,8 @@ import { useDispatch } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
 import Configurations from './BlockSidebar/Configurations';
 import WelcomeGuide, { init, showGuideNow } from '../nux/tips';
+import { useState, useCallback } from '@wordpress/element';
+import { useDebounce } from '@wordpress/compose';
 
 // initialize default for welcome preference if it does not exist
 init();
@@ -33,11 +35,11 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 		let config;
 		try {
 			await navigator.clipboard.writeText( attributes.sliderSettings );
-			config = { status: 'success', text: 'JSON copied to clipboard' };
+			config = { status: 'success', text: 'JSON copied to clipboard!' };
 		} catch ( err ) {
 			config = {
 				status: 'error',
-				text: 'Error copying JSON to clipboard',
+				text: 'Error copying JSON to clipboard!',
 			};
 		} finally {
 			createNotice( config.status, config.text, {
@@ -46,6 +48,43 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 			} );
 		}
 	};
+	const pasteJsonFromClipboard = async () => {
+		let config;
+		try {
+			const text = await navigator.clipboard.readText();
+			setAttributes( { sliderSettings: text } );
+			config = { status: 'success', text: 'JSON pasted!' };
+		} catch ( err ) {
+			config = {
+				status: 'error',
+				text: 'Error pasting JSON from clipboard!',
+			};
+		} finally {
+			createNotice( config.status, config.text, {
+				type: 'snackbar',
+				isDismissible: true,
+			} );
+		}
+	};
+
+	const [ isJSONError, setJSONError ] = useState( false );
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const debouncedValidateSettings = useCallback(
+		useDebounce( ( sliderSettings ) => {
+			try {
+				JSON.parse( sliderSettings );
+				setJSONError( false );
+			} catch ( error ) {
+				setJSONError( true );
+			}
+		}, 350 ),
+		[]
+	);
+	const validateAndSetSliderSettings = ( sliderSettings ) => {
+		setAttributes( { sliderSettings } );
+		debouncedValidateSettings( sliderSettings );
+	};
+
 	return (
 		<>
 			<InspectorControls group="settings">
@@ -199,9 +238,11 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 					initialOpen={ false }
 					scrollAfterOpen
 				>
-					<PanelRow>
+					<PanelRow className="mie-json-settings">
 						<TextareaControl
-							className="mie-advanced-slider-settings-special-help"
+							className={ `mie-advanced-slider-settings-special-help${
+								isJSONError ? ' mie-JSON-error' : ''
+							}` }
 							label={ __(
 								'Advanced slider settings',
 								'makeiteasy-slider'
@@ -214,12 +255,16 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 								`\nIf targeting slider default classes, add ${ attributes.sliderId },\ni.e. swiper-button-next-${ attributes.sliderId }.`
 							}
 							value={ attributes.sliderSettings }
-							onChange={ ( sliderSettings ) =>
-								setAttributes( { sliderSettings } )
-							}
+							onChange={ ( sliderSettings ) => {
+								validateAndSetSliderSettings( sliderSettings );
+							} }
 							rows="12"
-							style={ { width: '95%' } }
 						/>
+						{ isJSONError && (
+							<div className="mie-JSON-error-message">
+								{ __( 'Invalid JSON.', 'makeiteasy-slider' ) }
+							</div>
+						) }
 					</PanelRow>
 					<PanelRow>
 						<Button
@@ -228,6 +273,13 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							onClick={ copyJsonToClipboard }
 						>
 							Copy JSON
+						</Button>
+						<Button
+							variant="tertiary"
+							size="small"
+							onClick={ pasteJsonFromClipboard }
+						>
+							Paste JSON
 						</Button>
 					</PanelRow>
 					<PanelRow className="mie-helpful-links">

@@ -14,9 +14,6 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import './style.scss';
 
-// add toolbar for hiding slides
-import './editor-extensions/hide-toolbar-button.jsx';
-
 /**
  * Internal dependencies
  */
