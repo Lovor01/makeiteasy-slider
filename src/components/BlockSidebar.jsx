@@ -5,6 +5,7 @@ import {
 	PanelRow,
 	RadioControl,
 	TextareaControl,
+	TextControl,
 	ToggleControl,
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 	__experimentalUnitControl as UnitControl,
@@ -208,6 +209,25 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							] }
 						/>
 					</PanelRow>
+					<PanelRow>
+						<TextControl
+							className="mie-slides-per-view"
+							label={ __(
+								'Slides per view',
+								'makeiteasy-slider'
+							) }
+							type="number"
+							value={ attributes.slidesPerView.toString() }
+							onChange={ ( slidesPerView ) =>
+								setAttributes( {
+									slidesPerView: parseInt( slidesPerView ),
+								} )
+							}
+							disabled={
+								attributes.useOnlyAdvancedSliderSettings
+							}
+						/>
+					</PanelRow>
 				</PanelBody>
 				<PanelBody>
 					<PanelRow>
@@ -352,6 +372,29 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							},
 						] }
 						placeholder={ __( 'Auto', 'makeiteasy-slider' ) }
+					/>
+				</PanelRow>
+				<PanelRow>
+					<UnitControl
+						className="mie-space-between-slides"
+						label={ __( 'Slide spacing', 'makeiteasy-slider' ) }
+						value={ attributes.spaceBetween.toString() }
+						onChange={ ( spaceBetween ) =>
+							setAttributes( {
+								spaceBetween: parseFloat( spaceBetween ),
+							} )
+						}
+						units={ [
+							{
+								a11yLabel: 'pixels',
+								label: 'PX',
+								step: 1,
+								value: 'px',
+								default: 15,
+							},
+						] }
+						placeholder={ __( '0', 'makeiteasy-slider' ) }
+						size={ 5 }
 					/>
 				</PanelRow>
 			</InspectorControls>

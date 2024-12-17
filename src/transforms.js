@@ -1,92 +1,85 @@
 /**
  * This file defines block transforms to other blocks
  */
-import {
-	createBlock,
-	createBlocksFromInnerBlocksTemplate,
-} from '@wordpress/blocks';
+import { createBlock } from '@wordpress/blocks';
 
 // auxiliary function to handle case when there is only one block - in this case blocks is object
-const blocksToConvert = ( blocks ) =>
-	Array.isArray( blocks ) ? blocks : [ blocks ];
+// const blocksToConvert = ( blocks ) =>
+// 	Array.isArray( blocks ) ? blocks : [ blocks ];
 
 const everyBlockIsImage = ( blocks ) =>
-	blocks.every( ( block ) => block.name === 'core/image' );
+	removeSlide( blocks ).every( ( block ) => block.name === 'core/image' );
+
+// const flattenArrayOfBlocksToInnerBlocks = ( blocks ) =>
+// 	blocks.map( ( block ) => block.innerBlocks ).flat();
+
+const createSlider = ( blocks ) =>
+	createBlock(
+		'makeiteasy/slider',
+		undefined,
+		blocks.map( ( block ) =>
+			createBlock( 'makeiteasy/slide', undefined, [ block ] )
+		)
+	);
+
+/**
+ * @param {Object[]} innerBlocks
+ * @return {Array[]} - array of innerBlocks (array) without slides
+ */
+const removeSlide = ( innerBlocks ) =>
+	innerBlocks.flatMap( ( slide ) => slide.innerBlocks );
 
 export default {
 	from: [
 		{
 			type: 'block',
 			blocks: [ '*' ],
-			__experimentalConvert( blocks ) {
-				return createBlock(
-					'makeiteasy/slider',
-					undefined,
-					createBlocksFromInnerBlocksTemplate(
-						blocksToConvert( blocks )
-					)
-				);
+			transform( undefined, innerBlocksArray ) {
+				// innerBlocksArray is array of arrays of innerBlocks
+				return createSlider( innerBlocksArray.flat() );
 			},
 			//  exclude slider and gallery from all blocks
 			isMatch( _, blocks ) {
 				return ! blocks.some( ( block ) =>
-					[ 'makeiteasy/slider', 'core/gallery' ].includes(
+					[ 'makeiteasy/slider', 'makeiteasy/slide' ].includes(
 						block.name
 					)
 				);
 			},
 			isMultiBlock: true,
 		},
-		{
-			type: 'block',
-			blocks: [ 'core/gallery' ],
-			__experimentalConvert( block ) {
-				return createBlock(
-					'makeiteasy/slider',
-					undefined,
-					createBlocksFromInnerBlocksTemplate(
-						blocksToConvert( block.innerBlocks )
-					)
-				);
-			},
-			isMultiBlock: false,
-		},
 	],
 	to: [
 		{
 			type: 'block',
 			blocks: [ 'core/group' ],
-			__experimentalConvert( block ) {
+			transform( undefined, innerBlocks ) {
 				return createBlock(
 					'core/group',
 					undefined,
-					createBlocksFromInnerBlocksTemplate(
-						blocksToConvert( block.innerBlocks )
-					)
+					removeSlide( innerBlocks )
 				);
-			},
-			isMatch( _, block ) {
-				return ! everyBlockIsImage( block.innerBlocks );
 			},
 			priority: 9,
 		},
 		{
 			type: 'block',
 			blocks: [ 'core/gallery' ],
-			__experimentalConvert( block ) {
+			transform( undefined, innerBlocks ) {
 				return createBlock(
 					'core/gallery',
 					undefined,
-					createBlocksFromInnerBlocksTemplate(
-						blocksToConvert( block.innerBlocks )
-					)
+					removeSlide( innerBlocks )
 				);
 			},
-			isMatch( _, block ) {
-				return everyBlockIsImage( block.innerBlocks );
+			isMatch( undefined, { innerBlocks = undefined } ) {
+				if ( ! innerBlocks ) {
+					return false;
+				}
+				return everyBlockIsImage( innerBlocks );
 			},
 			priority: 9,
 		},
 	],
-	ungroup: ( attributes, innerBlocks ) => innerBlocks,
+	// ungroup: ( attributes, innerBlocks ) => innerBlocks,
 };

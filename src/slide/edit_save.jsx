@@ -1,12 +1,27 @@
-import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import {
+	store as blockEditorStore,
+	useBlockProps,
+	useInnerBlocksProps,
+	InnerBlocks,
+} from '@wordpress/block-editor';
 import BlockSidebar from './components/BlockSidebar';
 import BlockToolbar from './components/BlockToolbar';
-import { emptySliderTemplate, placeholder } from './components/templates';
+import { emptySliderTemplate, slidePlaceholder } from './components/templates';
 import cx from '../helpers/cx';
+import { useSelect } from '@wordpress/data';
 
 import './editor.scss';
 
-export function Edit( { attributes, setAttributes } ) {
+export function Edit( { attributes, setAttributes, clientId } ) {
+	const isEmpty = useSelect(
+		( select ) => {
+			return (
+				select( blockEditorStore ).getBlock( clientId ).innerBlocks
+					.length === 0
+			);
+		},
+		[ clientId ]
+	);
 	return (
 		<>
 			<BlockToolbar { ...{ attributes, setAttributes } } />
@@ -19,14 +34,24 @@ export function Edit( { attributes, setAttributes } ) {
 							Boolean(
 								attributes?.style?.dimensions?.minHeight
 							) && 'mie-slide-has-min-height',
-							attributes.hideSlide && 'mie-slide-hidden'
+							attributes.hideSlide && 'mie-slide-hidden',
+							isEmpty && 'mie-slide-has-placeholder'
 						),
 						style: { width: attributes.slideWidth },
 					} ),
 					{
 						template: emptySliderTemplate,
-						placeholder,
-						// renderAppender: false,
+						placeholder: slidePlaceholder,
+						prioritizedInserterBlocks: [
+							'core/cover',
+							'core/image',
+						],
+						renderAppender: () =>
+							isEmpty ? (
+								false
+							) : (
+								<InnerBlocks.DefaultBlockAppender />
+							),
 						templateInsertUpdatesSelection: true,
 					}
 				) }

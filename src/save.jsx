@@ -1,6 +1,6 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 // eslint-disable-next-line import/no-unresolved
-import { getCSSValueFromRawStyle } from '@wordpress/style-engine';
+// import { getCSSValueFromRawStyle } from '@wordpress/style-engine';
 // import { Children } from '@wordpress/element';
 
 const parseTimeInMilliseconds = ( time ) => {
@@ -14,12 +14,14 @@ export default function Save( {
 	attributes: {
 		sliderSettings,
 		timeBetweenSlides,
+		spaceBetween,
+		slidesPerView,
 		sliderId,
 		showNavigation,
 		showPagination,
 		showScrollbar,
 		sliderHeight,
-		style,
+		// style,
 		useOnlyAdvancedSliderSettings,
 	},
 } ) {
@@ -45,11 +47,11 @@ export default function Save( {
 		};
 	}
 
-	const blockGap = style?.spacing?.blockGap;
-	if ( blockGap ) {
-		parsedSettings.spaceBetween = getCSSValueFromRawStyle( blockGap );
-		// console.log( getCSSValueFromRawStyle( blockGap ) );
-	}
+	// const blockGap = style?.spacing?.blockGap;
+	// if ( blockGap ) {
+	// 	parsedSettings.spaceBetween = getCSSValueFromRawStyle( blockGap );
+	// console.log( getCSSValueFromRawStyle( blockGap ) );
+	// }
 
 	// each slider should have its unique class - therefore addition of sliderId
 	if ( ! useOnlyAdvancedSliderSettings ) {
@@ -76,6 +78,14 @@ export default function Save( {
 				el: `.swiper-scrollbar-${ sliderId }`,
 				draggable: true,
 			};
+		}
+
+		if ( spaceBetween ) {
+			parsedSettings.spaceBetween = spaceBetween;
+		}
+
+		if ( slidesPerView ) {
+			parsedSettings.slidesPerView = slidesPerView;
 		}
 	}
 	//  using converted parsedSettings back to JSON helps in managing, but also is a weak security layer - possible javascript is removed

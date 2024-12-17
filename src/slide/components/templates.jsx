@@ -1,5 +1,8 @@
+import { Placeholder } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
+import { InnerBlocks } from '@wordpress/block-editor';
+
 /**
  * Empty template, filterable
  *
@@ -22,16 +25,18 @@ export const emptySliderTemplate = applyFilters(
 	undefined
 );
 
-export const placeholder = (
-	<div className="mie-slide-placeholder">
-		{ __( 'Insert a block.', 'makeiteasy-slider' ) }
-		<br />
-		{ __( 'Cover or image blocks are usual choice.', 'makeiteasy-slider' ) }
-		<br />
-		{ __(
-			'Slider works, however, with every block.',
-			'makeiteasy-slider'
-		) }
-		<br />
-	</div>
+export const slidePlaceholder = (
+	<Placeholder className="mie-slide-placeholder">
+		<div>
+			{ __(
+				'This is a slide block inside slider block.',
+				'makeiteasy-slider'
+			) }
+			<br />
+			{ __( 'Insert a cover or image', 'makeiteasy-slider' ) }
+			<br />
+			{ __( 'or any other block to start.', 'makeiteasy-slider' ) }
+		</div>
+		<InnerBlocks.ButtonBlockAppender />
+	</Placeholder>
 );

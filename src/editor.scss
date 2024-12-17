@@ -4,6 +4,21 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+// show block appender inside container, not as absolute beside
+@mixin appender-inside {
+	display: flex;
+	gap: 12px;
+
+	.mie-slider-inner {
+		flex: 1;
+	}
+
+	.slider-external-appender {
+		position: static;
+		flex: none;
+	}
+}
+
 .wp-block-makeiteasy-slider {
 	.mie-slider-inner {
 		overflow-x: scroll;
@@ -61,7 +76,7 @@
 	// appender
 	.slider-external-appender {
 		position: absolute;
-		inset: 10px -60px 10px auto;
+		inset: 0 -60px 0 auto;
 
 		.block-editor-inserter {
 			height: 100%;
@@ -72,17 +87,21 @@
 		}
 	}
 
+	@media (max-width: 53.75rem) {
+		@include appender-inside;
+	}
+
 	&.mie-slider-restrict-width {
-		display: flex;
+		@include appender-inside;
+	}
 
+	@media (max-width: 300px) {
+		flex-wrap: wrap;
 		.mie-slider-inner {
-			flex: 1;
+			width: 100%;
 		}
-
 		.slider-external-appender {
-			position: static;
-			margin-left: 12px;
-			flex: none;
+			width: 100%;
 		}
 	}
 
@@ -121,8 +140,18 @@
  * Sidebar
  */
 // show spinners in sidebar control
-.mie-time-between-slides {
-	width: 15ch;
+.mie-time-between-slides,
+.mie-slides-per-view {
+	width: 14ch;
+}
+
+.mie-time-between-slides
+	.components-input-control__label.components-input-control__label.components-input-control__label {
+	overflow: visible;
+}
+
+.mie-slides-per-view .components-base-control__label {
+	max-width: none;
 }
 
 .mie-time-between-slides.mie-time-between-slides .components-input-control__input {
@@ -184,9 +213,25 @@
 }
 
 .components-modal__frame.components-guide {
-	max-height: 602px;
+	max-height: 685px;
 }
 
 .mie-helpful-links {
 	display: block;
+}
+
+.mie-space-between-slides {
+	width: 100%;
+
+	.components-unit-control__unit-label.components-unit-control__unit-label.components-unit-control__unit-label {
+		font-size: 8px;
+		min-width: auto;
+		padding-right: 0;
+		align-content: center;
+		text-transform: uppercase;
+
+		&.components-unit-control__unit-label {
+			color: rgb(47, 47, 47);
+		}
+	}
 }

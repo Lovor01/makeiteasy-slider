@@ -16,7 +16,7 @@ import './editor.scss';
 
 export default function Edit( {
 	attributes,
-	attributes: { sliderLayout, sliderHeight, align = undefined },
+	attributes: { sliderLayout, sliderHeight, spaceBetween, align = undefined },
 	setAttributes,
 	clientId,
 } ) {
@@ -99,6 +99,7 @@ export default function Edit( {
 					: false,
 				orientation: isVertical ? 'vertical' : 'horizontal',
 				defaultBlock: { name: 'makeiteasy/slide', attributes: {} },
+				template: [ [ 'makeiteasy/slide', {} ] ],
 				directInsert: true,
 				allowedBlocks: [ 'makeiteasy/slide' ],
 				placeholder: <EmptyPlaceholder />,
@@ -120,7 +121,12 @@ export default function Edit( {
 				setAttributes={ setAttributes }
 			/>
 			<div { ...restBlockProps }>
-				<div className="mie-slider-inner">{ innerBlocksChildren }</div>
+				<div
+					className="mie-slider-inner"
+					style={ { columnGap: spaceBetween } }
+				>
+					{ innerBlocksChildren }
+				</div>
 				{
 					/* Add external appender only in horizontal edit mode */
 					! isVertical && (

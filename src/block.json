@@ -1,9 +1,49 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
 	"name": "makeiteasy/slider",
 	"title": "Slider",
 	"description": "Slider based on blocks",
-	"apiVersion": 3,
+	"example": {
+		"attributes": {
+			"sliderSettings": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 9000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}",
+			"sliderLayout": 1,
+			"showNavigation": true,
+			"showPagination": true,
+			"showScrollbar": false,
+			"useOnlyAdvancedSliderSettings": false,
+			"timeBetweenSlides": "5000",
+			"sliderId": "",
+			"sliderHeight": ""
+		},
+		"innerBlocks": [
+			{
+				"name": "makeiteasy/slide",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"url": "https://s.w.org/images/core/5.3/Biologia_Centrali-Americana_-_Cantorchilus_semibadius_1902.jpg",
+							"alt": "Bird image"
+						}
+					}
+				]
+			},
+			{
+				"name": "makeiteasy/slide",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"url": "https://s.w.org/images/core/5.3/Sediment_off_the_Yucatan_Peninsula.jpg",
+							"alt": "Yucatan sediment"
+						}
+					}
+				]
+			}
+		],
+		"viewportWidth": 420
+	},
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./swiper-init.js",
 	"editorStyle": "file:./index.css",
@@ -13,7 +53,7 @@
 	"attributes": {
 		"sliderSettings": {
 			"type": "string",
-			"default": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 9000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}"
+			"default": "{\"pagination\":{\"el\":\".swiper-pagination\",\"type\":\"bullets\"},\"autoplay\":{\"delay\":6000},\"navigation\":{\"nextEl\":\".swiper-button-next\",\"prevEl\":\".swiper-button-prev\"}}"
 		},
 		"sliderLayout": {
 			"type": "number",
@@ -43,6 +83,14 @@
 		},
 		"sliderHeight": {
 			"type": "string"
+		},
+		"spaceBetween": {
+			"type": "number",
+			"default": 15
+		},
+		"slidesPerView": {
+			"type": "number",
+			"default": 1
 		}
 	},
 	"supports": {
@@ -57,7 +105,7 @@
 		"spacing": {
 			"margin": true,
 			"padding": true,
-			"blockGap": true
+			"blockGap": false
 		}
 	}
 }

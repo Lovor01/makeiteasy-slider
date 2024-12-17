@@ -54,6 +54,24 @@ function domReady() {
 	if ( swiperInstances ) {
 		swiperInstances.forEach( function ( el ) {
 			const parsedSettings = JSON.parse( el.dataset.settings );
+
+			// blockGap may return var(custom css property), in that case caclulate it to pixels
+			// still not good, may return 'min(1.5rem, 2vw)'
+			// if (
+			// 	parsedSettings.spaceBetween &&
+			// 	parsedSettings.spaceBetween.substring( 0, 4 ) === 'var('
+			// ) {
+			// 	parsedSettings.spaceBetween = parseInt(
+			// 		getComputedStyle(
+			// 			document.documentElement
+			// 		).getPropertyValue(
+			// 			parsedSettings.spaceBetween.substring(
+			// 				4,
+			// 				parsedSettings.spaceBetween.length - 1
+			// 			)
+			// 		)
+			// 	);
+			// }
 			const modules = [];
 			// if ( parsedSettings.pagination ) {
 			// 	modules.push( Pagination );
