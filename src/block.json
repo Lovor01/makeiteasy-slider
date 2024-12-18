@@ -6,7 +6,7 @@
 	"description": "Slider based on blocks",
 	"example": {
 		"attributes": {
-			"sliderSettings": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 9000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}",
+			"sliderSettings": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 6000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}",
 			"sliderLayout": 1,
 			"showNavigation": true,
 			"showPagination": true,
@@ -89,8 +89,12 @@
 			"default": 15
 		},
 		"slidesPerView": {
-			"type": "number",
-			"default": 1
+			"type": "string",
+			"default": "1"
+		},
+		"arrowsFromEdge": {
+			"type": "string",
+			"default": "10px"
 		}
 	},
 	"supports": {

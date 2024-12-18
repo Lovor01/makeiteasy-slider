@@ -4,7 +4,7 @@
 		"type": "bullets"
 	},
 	"autoplay": {
-		"delay": 9000
+		"delay": 6000
 	},
 	"navigation": {
 		"nextEl": ".swiper-button-next",

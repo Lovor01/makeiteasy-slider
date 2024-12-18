@@ -216,16 +216,18 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 								'Slides per view',
 								'makeiteasy-slider'
 							) }
-							type="number"
-							value={ attributes.slidesPerView.toString() }
+							type="text"
+							value={ attributes.slidesPerView }
 							onChange={ ( slidesPerView ) =>
-								setAttributes( {
-									slidesPerView: parseInt( slidesPerView ),
-								} )
+								setAttributes( { slidesPerView } )
 							}
 							disabled={
 								attributes.useOnlyAdvancedSliderSettings
 							}
+							help={ __(
+								'Number or "auto"',
+								'makeiteasy-slider'
+							) }
 						/>
 					</PanelRow>
 				</PanelBody>
@@ -395,6 +397,50 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 						] }
 						placeholder={ __( '0', 'makeiteasy-slider' ) }
 						size={ 5 }
+					/>
+				</PanelRow>
+				<PanelRow>
+					<UnitControl
+						label={ __( 'Arrows from edge', 'makeiteasy-slider' ) }
+						help={ __(
+							'Negative values push arrows outside the slider.',
+							'makeiteasy-slider'
+						) }
+						value={ attributes.arrowsFromEdge }
+						onChange={ ( arrowsFromEdge ) =>
+							setAttributes( { arrowsFromEdge } )
+						}
+						units={ [
+							{
+								a11yLabel: 'pixels',
+								label: 'px',
+								step: 1,
+								value: 'px',
+								default: 500,
+							},
+							{
+								a11yLabel: 'percent',
+								label: '%',
+								step: 1,
+								value: '%',
+								default: 100,
+							},
+							{
+								a11yLabel: 'viewport width',
+								label: 'vw',
+								step: 1,
+								value: 'vw',
+								default: 1,
+							},
+							{
+								a11yLabel: 'dynamic viewport width',
+								label: 'dvw',
+								step: 1,
+								value: 'dvw',
+								default: 1,
+							},
+						] }
+						placeholder="10px"
 					/>
 				</PanelRow>
 			</InspectorControls>

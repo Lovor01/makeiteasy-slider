@@ -23,6 +23,7 @@ export default function Save( {
 		sliderHeight,
 		// style,
 		useOnlyAdvancedSliderSettings,
+		arrowsFromEdge,
 	},
 } ) {
 	let parsedSettings;
@@ -136,9 +137,11 @@ export default function Save( {
 				<>
 					<div
 						className={ `swiper-button-prev swiper-button-prev-${ sliderId }` }
+						style={ { left: arrowsFromEdge } }
 					/>
 					<div
 						className={ `swiper-button-next swiper-button-next-${ sliderId }` }
+						style={ { right: arrowsFromEdge } }
 					/>
 				</>
 			) }
