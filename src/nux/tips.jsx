@@ -18,6 +18,7 @@ import { ReactComponent as ImgPage1 } from './images/welcome-p1.svg';
 import { ReactComponent as ImgPage2 } from './images/welcome-p2.svg';
 import { ReactComponent as ImgPage3 } from './images/welcome-p3.svg';
 import { ReactComponent as ImgPage4 } from './images/welcome-p4.svg';
+import { ReactComponent as ImgPage5 } from './images/welcome-p5.svg';
 
 // initialize defaults
 export function init() {
@@ -238,6 +239,35 @@ export default function () {
 										&#125;
 									</code>
 								</pre>
+							</div>
+						</>
+					),
+				},
+				{
+					image: (
+						<ImgPage5 className="edit-post-welcome-guide__image" />
+					),
+					content: (
+						<>
+							<h1 className="edit-post-welcome-guide__heading">
+								{ __(
+									'Where to put JSON?',
+									'makeiteasy-slider'
+								) }
+							</h1>
+							<div className="edit-post-welcome-guide__text">
+								<p>
+									{ __(
+										"In slider block sidebar, in settings tab, open 'Advanced slider settings'",
+										'makeiteasy-slider'
+									) }
+								</p>
+								<p>
+									{ __(
+										'There is a box with same title. Type or paste your JSON configuration there.',
+										'makeiteasy-slider'
+									) }
+								</p>
 							</div>
 						</>
 					),

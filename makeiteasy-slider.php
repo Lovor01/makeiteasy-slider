@@ -3,7 +3,7 @@
  *
  * @package           blocksliderswiper
  * @author            Lovro Hrust
- * @copyright 2022    Lovro Hrust
+ * @copyright         Lovro Hrust
  *
  * Plugin Name:       Makeiteasy slider swiper
  * Description:       Block slider based on swiper
