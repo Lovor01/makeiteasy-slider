@@ -1,12 +1,12 @@
 <?php
 /**
  *
- * @package           blocksliderswiper
+ * @package           makeiteasysliderswiper
  * @author            Lovro Hrust
  * @copyright         Lovro Hrust
  *
- * Plugin Name:       Makeiteasy slider swiper
- * Description:       Block slider based on swiper
+ * Plugin Name:       MakeITeasy slider
+ * Description:       Block slider based on Swiper library
  * Version:           1.0.0
  * Requires at least: 6.6
  * Requires PHP:      7.4

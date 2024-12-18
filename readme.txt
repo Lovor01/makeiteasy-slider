@@ -1,9 +1,9 @@
-=== Block Slider Swiper ===
+=== MakeITeasy slider ===
 Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
-Tags: slider
+Tags:              slider, carousel, swiper
 Requires at least: 6.6
-Tested up to:      6.6
+Tested up to:      6.7
 Stable tag:        1.0.0
 Requires PHP:      5.6
 License:           LGPLv3

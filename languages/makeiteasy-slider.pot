@@ -3,35 +3,269 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Makeiteasy slider swiper 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/swiper-block-slider\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/makeiteasy-slider\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-28T22:58:46+00:00\n"
+"POT-Creation-Date: 2024-12-18T14:28:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: makeiteasy-slider\n"
 
 #. Plugin Name of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\swiper-block-slider\makeiteasy-slider.php
+#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
 msgid "Makeiteasy slider swiper"
 msgstr ""
 
 #. Description of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\swiper-block-slider\makeiteasy-slider.php
+#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
 msgid "Block slider based on swiper"
 msgstr ""
 
 #. Author of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\swiper-block-slider\makeiteasy-slider.php
+#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
 msgid "Lovro Hrust"
 msgstr ""
 
 #. Author URI of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\swiper-block-slider\makeiteasy-slider.php
+#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
 msgid "https://lovrohrust.com.hr"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:74
+msgid "Welcome to Make IT easy slider!"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:80
+msgid "To insert slider into the post, find 'Slider' block under Media group."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:95
+msgid "Slide"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:99
+msgid "Click '+' rectangle to the right of the slider to insert slide block."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:105
+msgid "Slide block is auxiliary block which can be only inserted within the slider. It is a placeholder for slide content."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:121
+msgid "JSON configuration"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:128
+msgid "This slider offers extremely powerful option to harness the capabilities of the Swiper library, on which it is built."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:136
+msgid "Go to "
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:145
+msgid " and assemble your slider configuration as JSON (not javascript object) and paste it under advanced slider settings."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:162
+msgid "How to create JSON?"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:169
+msgid "Configuration described on"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:178
+msgid "is for JavaScript object."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:184
+msgid "To make JSON, just wrap each property in double qoutes and wrap everything in curly brackets."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:200
+msgid "Example"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:218
+msgid "becomes as JSON:"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:254
+msgid "Where to put JSON?"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:261
+msgid "In slider block sidebar, in settings tab, open 'Advanced slider settings'"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:267
+msgid "There is a box with same title. Type or paste your JSON configuration there."
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:119
+#: src/nux/tips.jsx:283
+msgid "Presets"
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:287
+msgid "There are also 9 presets to start with in settings tab in sidebar, under presets section."
+msgstr ""
+
+#: build/index.js:1
+#: src/nux/tips.jsx:293
+msgid "Selecting preset inserts related JSON in 'Advanced slider settings' box, and you can further modify it there."
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:96
+msgid "Editor layout"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:101
+msgid "Editor-only Setting"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:125
+msgid "Settings"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:128
+msgid "Show Navigation"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:143
+msgid "Show Pagination"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:158
+msgid "Show Scrollbar"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:174
+msgid "Slide interval"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:215
+msgid "Slides per view"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:227
+msgid "Number or \"auto\""
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:237
+msgid "Use only advanced slider settings"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:256
+#: src/components/BlockSidebar.jsx:268
+msgid "Advanced slider settings"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:273
+msgid "Slider settings as object properties (JSON)."
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:287
+msgid "Invalid JSON."
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:341
+msgid "Slider height"
+msgstr ""
+
+#: build/index.js:1
+#: build/slide/index.js:1
+#: src/components/BlockSidebar.jsx:376
+#: src/slide/components/BlockSidebar.jsx:64
+msgid "Auto"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:382
+msgid "Slide spacing"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:398
+msgid "0"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:404
+msgid "Arrows from edge"
+msgstr ""
+
+#: build/index.js:1
+#: src/components/BlockSidebar.jsx:405
+msgid "Negative values push arrows outside the slider."
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/BlockSidebar.jsx:22
+msgid "Width"
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/BlockSidebar.jsx:29
+msgid "Slide width"
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/BlockToolbar.jsx:20
+msgid "Hide slide"
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/templates.jsx:31
+msgid "This is a slide block inside slider block."
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/templates.jsx:36
+msgid "Insert a cover or image"
+msgstr ""
+
+#: build/slide/index.js:1
+#: src/slide/components/templates.jsx:38
+msgid "or any other block to start."
 msgstr ""
 
 #: build/block.json
@@ -44,4 +278,16 @@ msgstr ""
 #: src/block.json
 msgctxt "block description"
 msgid "Slider based on blocks"
+msgstr ""
+
+#: build/slide/block.json
+#: src/slide/block.json
+msgctxt "block title"
+msgid "Slide"
+msgstr ""
+
+#: build/slide/block.json
+#: src/slide/block.json
+msgctxt "block description"
+msgid "Slide for makeiteasy slider"
 msgstr ""

@@ -18,7 +18,8 @@ import { ReactComponent as ImgPage1 } from './images/welcome-p1.svg';
 import { ReactComponent as ImgPage2 } from './images/welcome-p2.svg';
 import { ReactComponent as ImgPage3 } from './images/welcome-p3.svg';
 import { ReactComponent as ImgPage4 } from './images/welcome-p4.svg';
-import { ReactComponent as ImgPage5 } from './images/welcome-p5.svg';
+import { ReactComponent as ImgPage6 } from './images/welcome-p5.svg';
+import { ReactComponent as ImgPage7 } from './images/welcome-p6.svg';
 
 // initialize defaults
 export function init() {
@@ -245,7 +246,7 @@ export default function () {
 				},
 				{
 					image: (
-						<ImgPage5 className="edit-post-welcome-guide__image" />
+						<ImgPage6 className="edit-post-welcome-guide__image" />
 					),
 					content: (
 						<>
@@ -265,6 +266,32 @@ export default function () {
 								<p>
 									{ __(
 										'There is a box with same title. Type or paste your JSON configuration there.',
+										'makeiteasy-slider'
+									) }
+								</p>
+							</div>
+						</>
+					),
+				},
+				{
+					image: (
+						<ImgPage7 className="edit-post-welcome-guide__image" />
+					),
+					content: (
+						<>
+							<h1 className="edit-post-welcome-guide__heading">
+								{ __( 'Presets', 'makeiteasy-slider' ) }
+							</h1>
+							<div className="edit-post-welcome-guide__text">
+								<p>
+									{ __(
+										'There are also 9 presets to start with in settings tab in sidebar, under presets section.',
+										'makeiteasy-slider'
+									) }
+								</p>
+								<p>
+									{ __(
+										"Selecting preset inserts related JSON in 'Advanced slider settings' box, and you can further modify it there.",
 										'makeiteasy-slider'
 									) }
 								</p>
