@@ -5,7 +5,7 @@ Tags:              slider, carousel, swiper
 Requires at least: 6.6
 Tested up to:      6.7
 Stable tag:        1.0.0
-Requires PHP:      5.6
+Requires PHP:      7.4
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -26,9 +26,9 @@ Block based slider, leverages the speed and versatility of the [Swiper slider](h
 
 = JSON configuration how to =
 
-Head to Swiper docs, to [Parameters](https://swiperjs.com/swiper-api#parameters) to find parameter you need and full parameters configuration is for many
-parameters available further below on page, in [Modules](https://swiperjs.com/swiper-api#modules)
-to find configuration parameters you need. Once you found them, write them as JSON instead as javascript object, i.e.:
+Head to Swiper docs, to [Parameters section](https://swiperjs.com/swiper-api#parameters) to find parameter you need.
+More elaborate configuration for some features is available further below on page, in [Modules section](https://swiperjs.com/swiper-api#modules).
+Once you found the parameters you need, write them as JSON instead as javascript object, i.e.:
 
 `
 {
@@ -42,8 +42,25 @@ to find configuration parameters you need. Once you found them, write them as JS
 }
 `
 
-Your JSON configuration merges with default configuration needed for swiper to run. You can break slider functioning through miconfiguration,
-so this is the first place to look if something does not work.
+would be written as
+
+`
+{
+	"autoplay": {
+		"delay": 6000,
+		"disableOnInteraction": true
+	},
+	"pagination": {
+		"clickable": true
+	}
+}
+`
+
+And enter them on settings tab in block sidebar under Advanced slider configuration section.
+You can learn more about JSON in [Stackoverflow blog](https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/) or on [W3schools page](https://www.w3schools.com/js/js_json_intro.asp).
+
+Your JSON configuration merges with default configuration needed for swiper to run. You can break slider functioning through misconfiguration, so this is the first place to look if something does not work.
+There is a built in syntax checker in Advanced slider settings box,
 
 == Installation ==
 
