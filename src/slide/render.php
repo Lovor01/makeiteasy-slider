@@ -4,5 +4,5 @@
  */
 
 if ( ! isset( $attributes['hideSlide'] ) || $attributes['hideSlide'] === false ) {
-	echo $content;
+	echo wp_kses_post($content);
 }

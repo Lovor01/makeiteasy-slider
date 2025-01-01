@@ -5,13 +5,12 @@
  * @author            Lovro Hrust
  * @copyright         Lovro Hrust
  *
- * Plugin Name:       MakeITeasy slider
+ * Plugin Name:       Makeiteasy Slider
  * Description:       Block slider based on Swiper library
  * Version:           1.0.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Lovro Hrust
- * Author URI:        https://lovrohrust.com.hr
  * License:           LGPLv3
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       makeiteasy-slider
@@ -37,6 +36,10 @@ namespace Makeiteasy\Slider;
 //  [],
 //  '1.0.0'
 // );
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 function makeiteasy_swiper_slider_block_init() {
 	\register_block_type( __DIR__ . '/build' );

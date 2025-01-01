@@ -23,6 +23,6 @@
 		"dotenv": "^16.4.5"
 	},
 	"dependencies": {
-		"swiper": "^11.1.14"
+		"swiper": "^11.1.15"
 	}
 }

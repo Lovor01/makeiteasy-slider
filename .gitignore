@@ -34,3 +34,4 @@ build/
 
 #tools
 .dev
+*.code-workspace
