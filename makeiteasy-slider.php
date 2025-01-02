@@ -12,7 +12,7 @@
  * Requires PHP:      7.4
  * Author:            Lovro Hrust
  * License:           LGPLv3
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
  * Text Domain:       makeiteasy-slider
  *
  */
@@ -26,16 +26,6 @@
 
 namespace Makeiteasy\Slider;
 
-/**
- * register modules
- */
-// register swiper module
-// wp_enqueue_script_module(
-//  'makeiteasy/swiper',
-//  plugins_url( 'build/swiper/swiper-bundle.min.js', __FILE__ ),
-//  [],
-//  '1.0.0'
-// );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
