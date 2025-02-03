@@ -1,9 +1,9 @@
 === Makeiteasy Slider ===
 Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
-Tags:              slider, carousel, swiper
+Tags:              slider, carousel, swiper, block
 Tested up to:      6.7
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -12,8 +12,6 @@ Slider based on very popular library Swiper! Insert blocks as slides. Truly open
 == Description ==
 
 Block based slider, leverages the speed and versatility of the [Swiper slider](https://swiperjs.com/).
-
-👆 Try demo - there is a "Live preview" button on the top of this page 👆
 
 = Key Features =
 
@@ -89,6 +87,10 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 
 == Changelog ==
 
+= 1.0.1 =
+Set minimum slide width in editor
+Enable styling colors in slider background and slider colors which could be inherited (Color section in block sidebar).
+
 = 1.0.0 =
 Initial version
 
@@ -96,3 +98,7 @@ Initial version
 
 = 1.0.0 =
 Initial version
+
+== Developers ==
+
+There is a full source code on [github](https://github.com/Lovor01/makeiteasy-slider). You can investigate code, adjust it to your needs, collaborate, ...

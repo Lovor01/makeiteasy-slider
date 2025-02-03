@@ -2,30 +2,30 @@
 # This file is distributed under the LGPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Makeiteasy Slider 1.0.0\n"
+"Project-Id-Version: Makeiteasy Slider 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/makeiteasy-slider\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-01T20:25:16+00:00\n"
+"POT-Creation-Date: 2025-02-03T13:46:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: makeiteasy-slider\n"
 
 #. Plugin Name of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
+#: makeiteasy-slider.php
 msgid "Makeiteasy Slider"
 msgstr ""
 
 #. Description of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
+#: makeiteasy-slider.php
 msgid "Block slider based on Swiper library"
 msgstr ""
 
 #. Author of the plugin
-#: C:\Wamp.NET\sites\generatepress\public\wp-content\plugins\makeiteasy-slider\makeiteasy-slider.php
+#: makeiteasy-slider.php
 msgid "Lovro Hrust"
 msgstr ""
 

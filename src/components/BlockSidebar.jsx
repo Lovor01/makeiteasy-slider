@@ -105,7 +105,7 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							help="This control adjusts the block layout in the editor. It does not affect the front-end display."
 							selected={ attributes.sliderLayout.toString() }
 							options={ [
-								{ label: 'one horizontal slide', value: '1' },
+								{ label: 'horizontal slide(s)', value: '1' },
 								{ label: 'vertical', value: '3' },
 								{
 									label: 'two slides horizontal',

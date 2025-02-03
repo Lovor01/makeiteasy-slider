@@ -105,6 +105,12 @@
 			"aspectRatio": true,
 			"minHeight": true
 		},
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true,
+			"gradients": true
+		},
 		"shadow": true,
 		"spacing": {
 			"margin": true,

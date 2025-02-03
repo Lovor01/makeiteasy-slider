@@ -1,6 +1,6 @@
 {
 	"name": "makeiteasy-slider",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Slider block",
 	"author": "Lovro",
 	"license": "GPL-2.0-or-later",
@@ -19,7 +19,7 @@
 		"check-licenses": "wp-scripts check-licenses --prod --gpl2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.7.0",
+		"@wordpress/scripts": "^30.10.0",
 		"dotenv": "^16.4.5"
 	},
 	"dependencies": {
