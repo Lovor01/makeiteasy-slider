@@ -3,7 +3,7 @@ Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
 Tested up to:      6.7
-Stable tag:        1.0.1
+Stable tag:        1.0.2
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -86,6 +86,9 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 2. This is the second screen shot
 
 == Changelog ==
+
+= 1.0.2 =
+Minimum slide width in editor breaks display in editor when slides are small images - this is reverted back to v1.0.0.
 
 = 1.0.1 =
 Set minimum slide width in editor

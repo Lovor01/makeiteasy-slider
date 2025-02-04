@@ -5,7 +5,8 @@
 }
 
 .wp-block-makeiteasy-slide {
-	min-width: calc(var(--wp--style--global--content-size, 700px) / 2);
+	// TODO: following line breaks things when slides are small and there are many - improve
+	// min-width: calc(var(--wp--style--global--content-size, 700px) / 2);
 	// dimm slide which is hidden
 	&.mie-slide-hidden {
 		&::after {
