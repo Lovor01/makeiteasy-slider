@@ -87,6 +87,9 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 
 == Changelog ==
 
+= 1.0.3 =
+Deprecating "two sliddes horizontal" editor view mode in favor of calculating slide widths according to Swiper's slidesPerView setting.
+
 = 1.0.2 =
 Minimum slide width in editor breaks display in editor when slides are small images - this is reverted back to v1.0.0.
 

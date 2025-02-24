@@ -59,7 +59,7 @@ export default function Edit( {
 	 * sliderLayout:
 	 * 1 - horizontal
 	 * 2 - horizontal 50% width
-	 * 3 - vertical
+	 * 3 - vertical !!! deprecated - not anymore possible to select
 	 */
 	const getClasses = () => {
 		let classToReturn = '';

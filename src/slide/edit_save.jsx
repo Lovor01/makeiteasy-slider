@@ -12,7 +12,7 @@ import { useSelect } from '@wordpress/data';
 
 import './editor.scss';
 
-export function Edit( { attributes, setAttributes, clientId } ) {
+export function Edit( { attributes, setAttributes, clientId, context } ) {
 	const isEmpty = useSelect(
 		( select ) => {
 			return (
@@ -37,7 +37,17 @@ export function Edit( { attributes, setAttributes, clientId } ) {
 							attributes.hideSlide && 'mie-slide-hidden',
 							isEmpty && 'mie-slide-has-placeholder'
 						),
-						style: { width: attributes.slideWidth },
+						style: {
+							width:
+								attributes.slideWidth ||
+								100 /
+									parseInt(
+										context[
+											'makeiteasy-slider/slidesPerView'
+										]
+									) +
+									'%',
+						},
 					} ),
 					{
 						template: emptySliderTemplate,

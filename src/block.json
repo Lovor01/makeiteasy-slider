@@ -101,6 +101,7 @@
 		"anchor": true,
 		"align": [ "full", "wide" ],
 		"ariaLabel": true,
+		"lock": true,
 		"dimensions": {
 			"aspectRatio": true,
 			"minHeight": true
@@ -117,5 +118,8 @@
 			"padding": true,
 			"blockGap": false
 		}
+	},
+	"providesContext": {
+		"makeiteasy-slider/slidesPerView": "slidesPerView"
 	}
 }

@@ -107,10 +107,6 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 							options={ [
 								{ label: 'horizontal slide(s)', value: '1' },
 								{ label: 'vertical', value: '3' },
-								{
-									label: 'two slides horizontal',
-									value: '2',
-								},
 							] }
 							onChange={ handleSliderLayoutChange }
 						/>
