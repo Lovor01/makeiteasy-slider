@@ -36,5 +36,9 @@
 		"shadow": true,
 		"inserter": true
 	},
-	"usesContext": [ "makeiteasy-slider/slidesPerView" ]
+	"usesContext": [
+		"makeiteasy-slider/slidesPerView",
+		"makeiteasy-slider/sliderSettings",
+		"makeiteasy-slider/useOnlyAdvancedSliderSettings"
+	]
 }

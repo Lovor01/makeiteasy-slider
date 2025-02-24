@@ -9,6 +9,7 @@ import BlockToolbar from './components/BlockToolbar';
 import { emptySliderTemplate, slidePlaceholder } from './components/templates';
 import cx from '../helpers/cx';
 import { useSelect } from '@wordpress/data';
+import { useMemo } from '@wordpress/element';
 
 import './editor.scss';
 
@@ -21,6 +22,19 @@ export function Edit( { attributes, setAttributes, clientId, context } ) {
 			);
 		},
 		[ clientId ]
+	);
+	const sliderSettings = context[ 'makeiteasy-slider/sliderSettings' ];
+	const slidesPerViewFromJSON = useMemo( () => {
+		try {
+			return JSON.parse( sliderSettings ).slidesPerView;
+		} catch ( e ) {
+			return undefined;
+		}
+	}, [ sliderSettings ] );
+	const slidesPerView = parseInt(
+		( ! context[ 'makeiteasy-slider/useOnlyAdvancedSliderSettings' ] &&
+			context[ 'makeiteasy-slider/slidesPerView' ] ) ||
+			slidesPerViewFromJSON
 	);
 	return (
 		<>
@@ -40,13 +54,7 @@ export function Edit( { attributes, setAttributes, clientId, context } ) {
 						style: {
 							width:
 								attributes.slideWidth ||
-								100 /
-									parseInt(
-										context[
-											'makeiteasy-slider/slidesPerView'
-										]
-									) +
-									'%',
+								100 / slidesPerView + '%',
 						},
 					} ),
 					{

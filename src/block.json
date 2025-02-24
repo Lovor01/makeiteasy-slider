@@ -120,6 +120,8 @@
 		}
 	},
 	"providesContext": {
-		"makeiteasy-slider/slidesPerView": "slidesPerView"
+		"makeiteasy-slider/slidesPerView": "slidesPerView",
+		"makeiteasy-slider/sliderSettings": "sliderSettings",
+		"makeiteasy-slider/useOnlyAdvancedSliderSettings": "useOnlyAdvancedSliderSettings"
 	}
 }
