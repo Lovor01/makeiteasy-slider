@@ -3,7 +3,7 @@ Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
 Tested up to:      6.7
-Stable tag:        1.0.2
+Stable tag:        1.0.3
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -78,7 +78,7 @@ and very powerful.
 
 = Can I use it in other page builders (e.g. Elementor) =
 
-Depends on page builder. Some builders also have third party add-ons which enable that.
+Depends on page builder. Some builders also have third party add-ons which enable using blocks.
 
 == Screenshots ==
 

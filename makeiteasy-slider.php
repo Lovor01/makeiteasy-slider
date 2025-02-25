@@ -32,8 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function makeiteasy_swiper_slider_block_init() {
-	\register_block_type( __DIR__ . '/build' );
 	\register_block_type( __DIR__ . '/build/slide' );
+	\register_block_type( __DIR__ . '/build' );
 	\wp_set_script_translations( 'makeiteasy-slider-editor-script', 'makeiteasy-slider', plugin_dir_path( __FILE__ ) . 'languages' );
 }
 add_action( 'init', 'Makeiteasy\Slider\makeiteasy_swiper_slider_block_init' );
