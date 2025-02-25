@@ -3,7 +3,7 @@ Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
 Tested up to:      6.7
-Stable tag:        1.0.3
+Stable tag:        1.0.4
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
