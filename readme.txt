@@ -87,6 +87,9 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 
 == Changelog ==
 
+= 1.0.4 =
+Attempt to fix error when inserting block from searching from block library in block inserter.
+
 = 1.0.3 =
 Deprecating "two sliddes horizontal" editor view mode in favor of calculating slide widths according to Swiper's slidesPerView setting.
 
