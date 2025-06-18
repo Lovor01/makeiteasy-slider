@@ -2,8 +2,8 @@
 Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
-Tested up to:      6.7
-Stable tag:        1.0.4
+Tested up to:      6.8
+Stable tag:        1.0.5
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -19,6 +19,12 @@ Block based slider, leverages the speed and versatility of the [Swiper slider](h
 - 🥈 **Flexible Configuration**: Use Swiper’s full range of features by entering the JSON configuration.
 - 🥉 **Lightweight & Fast**: Uses only [Swiper](https://swiperjs.com/) library as dependency.
 - 🌟 **Developer-Friendly**: The source code is fully available, making it easy to customize with hooks.
+
+= NEW! =
+
+I am accepting suggestions for new features and improvements.
+If you have an idea, please [open an issue on GitHub](https://github.com/Lovor01/makeiteasy-slider/issues)
+or write here in support section.
 
 = JSON configuration how to =
 
@@ -86,6 +92,9 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 2. This is the second screen shot
 
 == Changelog ==
+
+= 1.0.5 =
+Swiper library updated to newest version (11.2.8)
 
 = 1.0.4 =
 Attempt to fix error when inserting block from searching from block library in block inserter.
