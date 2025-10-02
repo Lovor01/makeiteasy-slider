@@ -94,7 +94,7 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 == Changelog ==
 
 = 1.0.5 =
-Swiper library updated to newest version (11.2.8)
+Swiper library updated to version 11.2.10. WordPress scripts package updated to 30.25.0. Dotenv package updated to 16.6.1.
 
 = 1.0.4 =
 Attempt to fix error when inserting block from searching from block library in block inserter.

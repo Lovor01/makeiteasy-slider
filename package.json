@@ -19,10 +19,10 @@
 		"check-licenses": "wp-scripts check-licenses --prod --gpl2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.18.0",
-		"dotenv": "^16.4.5"
+		"@wordpress/scripts": "^30.25.0",
+		"dotenv": "^16.6.1"
 	},
 	"dependencies": {
-		"swiper": "^11.1.15"
+		"swiper": "^11.2.10"
 	}
 }
