@@ -119,7 +119,10 @@
 				"pagination": {
 					"el": ".swiper-pagination",
 					"clickable": true
-				}
+				},
+				"fadeEffect": {
+			    "crossFade": true
+			  },
 			}
 		},
 		"Coverflow": {
