@@ -2,8 +2,8 @@
 Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
-Tested up to:      6.8
-Stable tag:        1.0.5
+Tested up to:      6.9
+Stable tag:        1.0.6
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -92,6 +92,9 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 2. This is the second screen shot
 
 == Changelog ==
+
+= 1.0.6 =
+Updated default Swiper configurations in default.json.
 
 = 1.0.5 =
 Swiper library updated to version 11.2.10. WordPress scripts package updated to 30.25.0. Dotenv package updated to 16.6.1.

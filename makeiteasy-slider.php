@@ -7,7 +7,7 @@
  *
  * Plugin Name:       Makeiteasy Slider
  * Description:       Block slider based on Swiper library
- * Version:           1.0.5
+ * Version:           1.0.6
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Lovro Hrust
