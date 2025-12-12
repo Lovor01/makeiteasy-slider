@@ -121,8 +121,8 @@
 					"clickable": true
 				},
 				"fadeEffect": {
-			    "crossFade": true
-			  },
+					"crossFade": true
+				}
 			}
 		},
 		"Coverflow": {
