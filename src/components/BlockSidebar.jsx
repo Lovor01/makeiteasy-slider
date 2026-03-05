@@ -73,7 +73,7 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 	const debouncedValidateSettings = useCallback(
 		useDebounce( ( sliderSettings ) => {
 			try {
-				JSON.parse( sliderSettings );
+				sliderSettings === '' || JSON.parse( sliderSettings );
 				setJSONError( false );
 			} catch ( error ) {
 				setJSONError( true );
@@ -231,7 +231,7 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 					<PanelRow>
 						<ToggleControl
 							label={ __(
-								'Use only advanced slider settings',
+								'Use only advanced settings',
 								'makeiteasy-slider'
 							) }
 							checked={ attributes.useOnlyAdvancedSliderSettings }
@@ -240,6 +240,10 @@ const SliderSidebar = ( { attributes, setAttributes } ) => {
 									useOnlyAdvancedSliderSettings,
 								} )
 							}
+							help={ __(
+								'UI settings above override JSON settings, unless this is enabled.',
+								'makeiteasy-slider'
+							) }
 						/>
 					</PanelRow>
 				</PanelBody>

@@ -1,6 +1,7 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 // eslint-disable-next-line import/no-unresolved
 // import { getCSSValueFromRawStyle } from '@wordpress/style-engine';
+// import { Children } from '@wordpress/element';
 
 const parseTimeInMilliseconds = ( time ) => {
 	if ( time?.match( /[a-zA-Z]/g )?.join( '' ) === 's' ) {
@@ -26,8 +27,7 @@ export default function Save( {
 } ) {
 	let parsedSettings;
 	try {
-		parsedSettings =
-			sliderSettings !== '' ? JSON.parse( sliderSettings ) : {};
+		parsedSettings = JSON.parse( sliderSettings );
 	} catch {
 		// eslint-disable-next-line no-console
 		console.warn( 'Error parsing slider settings' );
@@ -62,8 +62,6 @@ export default function Save( {
 				prevEl: `.swiper-button-prev-${ sliderId }`,
 				nextEl: `.swiper-button-next-${ sliderId }`,
 			};
-		} else {
-			delete parsedSettings.navigation;
 		}
 
 		if ( showPagination ) {
@@ -73,8 +71,6 @@ export default function Save( {
 				type: parsedSettings?.pagination?.type ?? 'bullets',
 				// clickable: true,
 			};
-		} else {
-			delete parsedSettings.pagination;
 		}
 
 		if ( showScrollbar ) {
@@ -83,8 +79,6 @@ export default function Save( {
 				el: `.swiper-scrollbar-${ sliderId }`,
 				draggable: true,
 			};
-		} else {
-			delete parsedSettings.scrollbar;
 		}
 
 		if ( spaceBetween ) {

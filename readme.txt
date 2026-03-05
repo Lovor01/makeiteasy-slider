@@ -3,7 +3,7 @@ Contributors:      lovor
 Donate link:       https://buymeacoffee.com/lovro
 Tags:              slider, carousel, swiper, block
 Tested up to:      6.9
-Stable tag:        1.0.6
+Stable tag:        1.0.7
 License:           LGPLv3
 License URI:       https://www.gnu.org/licenses/lgpl-3.0.html
 
@@ -92,6 +92,8 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 2. This is the second screen shot
 
 == Changelog ==
+
+= 1.0.7 =
 
 = 1.0.6 =
 Updated default Swiper configurations in default.json.

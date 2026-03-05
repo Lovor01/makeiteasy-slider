@@ -24,6 +24,7 @@ import save from './save.jsx';
 /* eslint-disable camelcase */
 import save_v0_9 from './deprecated/save_v0_9.jsx';
 import settings_v0_9 from './deprecated/settings_v0_9.json';
+import blockv1_0_6 from './deprecated/1.0.6/index.js';
 /* eslint-enable camelcase */
 
 import transforms from './transforms.js';
@@ -54,6 +55,11 @@ const settings = {
 			save: save_v0_9,
 			/* eslint-enable camelcase */
 		},
+		{
+			attributes: blockv1_0_6.attributes,
+			supports: blockv1_0_6.supports,
+			save: blockv1_0_6.save,
+		}
 	],
 };
 

@@ -1,0 +1,127 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "makeiteasy/slider",
+	"title": "Slider",
+	"description": "Slider based on blocks",
+	"example": {
+		"attributes": {
+			"sliderSettings": "{\"pagination\": {\"el\": \".swiper-pagination\",\"type\": \"bullets\"},\"autoplay\": {\"delay\": 6000},\"navigation\": {\"nextEl\": \".swiper-button-next\",\"prevEl\": \".swiper-button-prev\"}}",
+			"sliderLayout": 1,
+			"showNavigation": true,
+			"showPagination": true,
+			"showScrollbar": false,
+			"useOnlyAdvancedSliderSettings": false,
+			"timeBetweenSlides": "5000",
+			"sliderId": "",
+			"sliderHeight": ""
+		},
+		"innerBlocks": [
+			{
+				"name": "makeiteasy/slide",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"url": "https://s.w.org/images/core/5.3/Biologia_Centrali-Americana_-_Cantorchilus_semibadius_1902.jpg",
+							"alt": "Bird image"
+						}
+					}
+				]
+			},
+			{
+				"name": "makeiteasy/slide",
+				"innerBlocks": [
+					{
+						"name": "core/image",
+						"attributes": {
+							"url": "https://s.w.org/images/core/5.3/Sediment_off_the_Yucatan_Peninsula.jpg",
+							"alt": "Yucatan sediment"
+						}
+					}
+				]
+			}
+		],
+		"viewportWidth": 420
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./swiper-init.js",
+	"editorStyle": "file:./index.css",
+	"style": [ "file:./swiper-init.css", "file:./style-index.css" ],
+	"allowedBlocks": [ "makeiteasy/slide" ],
+	"category": "media",
+	"attributes": {
+		"sliderSettings": {
+			"type": "string",
+			"default": "{\"pagination\":{\"el\":\".swiper-pagination\",\"type\":\"bullets\"},\"autoplay\":{\"delay\":6000},\"navigation\":{\"nextEl\":\".swiper-button-next\",\"prevEl\":\".swiper-button-prev\"}}"
+		},
+		"sliderLayout": {
+			"type": "number",
+			"default": 1
+		},
+		"showNavigation": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"showScrollbar": {
+			"type": "boolean",
+			"default": false
+		},
+		"useOnlyAdvancedSliderSettings": {
+			"type": "boolean",
+			"default": false
+		},
+		"timeBetweenSlides": {
+			"type": "string"
+		},
+		"sliderId": {
+			"type": "string"
+		},
+		"sliderHeight": {
+			"type": "string"
+		},
+		"spaceBetween": {
+			"type": "number",
+			"default": 15
+		},
+		"slidesPerView": {
+			"type": "string",
+			"default": "1"
+		},
+		"arrowsFromEdge": {
+			"type": "string",
+			"default": "10px"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": [ "full", "wide" ],
+		"ariaLabel": true,
+		"lock": true,
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true,
+			"gradients": true
+		},
+		"shadow": true,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": false
+		}
+	},
+	"providesContext": {
+		"makeiteasy-slider/slidesPerView": "slidesPerView",
+		"makeiteasy-slider/sliderSettings": "sliderSettings",
+		"makeiteasy-slider/useOnlyAdvancedSliderSettings": "useOnlyAdvancedSliderSettings"
+	}
+}
