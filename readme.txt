@@ -94,6 +94,8 @@ Depends on page builder. Some builders also have third party add-ons which enabl
 == Changelog ==
 
 = 1.0.7 =
+Fixed bug where disabled controls in UI would be overriden by JSON config in "Advanced slider settings".
+JSON config in "Advanced slider settings" can be blank now. Update @wordpress/scripts package.
 
 = 1.0.6 =
 Updated default Swiper configurations in default.json.
